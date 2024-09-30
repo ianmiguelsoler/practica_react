@@ -1,35 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import Contenedor from './componentes/contenedor/Contenedor.jsx';
 
-function App() {
-  const [count, setCount] = useState(0)
+import Interprete from './componentes/interprete/Interprete.jsx';
 
+const App = () => {
   return (
-    <>
+    <Contenedor>
+      <h1>Contenido dentro del contenedor</h1>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <Interprete 
+        nombre = "TEEMO"
+        imagen = "https://fotografias-neox.atresmedia.com/clipping/cmsimages01/2017/07/05/B783CFA6-3B58-42DA-9DC8-4AC80790CBDE/69.jpg?crop=1024,576,x0,y0&width=1280&height=720&optimize=high&format=webply"
+        >Teemo es el valiente líder de los Exploradores de Bandle, un grupo de intrépidos yordles que se dedican a explorar Runaterra mientras aprenden sobre el vasto mundo.</Interprete>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    </Contenedor>
+  );
+};
 
-export default App
+export default App;

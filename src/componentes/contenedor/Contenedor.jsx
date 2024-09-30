@@ -1,12 +1,12 @@
-import './Contenedor.css';
-import PropTypes from 'prop-types'; // Importa PropTypes
-const Contenedor = (props) => {
-    const { titulo } = props;
-    return (
-        <>
-            <h2>{titulo}</h2>
-        </>
-    );
+import React from 'react';
+import './Contenedor.css'; // Importar el archivo CSS
+
+const Contenedor = ({ children }) => {
+  return (
+    <div className="contenedor">
+      {children}
+    </div>
+  );
 };
 
 export default Contenedor;
