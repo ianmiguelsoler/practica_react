@@ -6,13 +6,12 @@ const Interprete = ( props ) => {
   return (
     <div className="contenedorFotografia">
         <div className="contenedorImagen">
-            <img src={imagen} className='estilosImagen'></img>
+            <img src={imagen} className='estilosImagen' alt="Imagen de Teemo - Legue of Legends"></img>
         </div>
         <div className="textos">
             <div className="contenedorNombre"><h1>{nombre}</h1></div>
             <div className="contenedorBiografia"><h3>{children}</h3></div>
         </div>
-        
     </div>
   );
 };
