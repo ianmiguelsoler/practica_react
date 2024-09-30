@@ -1,14 +1,12 @@
-import './Contenedor.css'
+import './Contenedor.css';
+import PropTypes from 'prop-types'; // Importa PropTypes
+const Contenedor = (props) => {
+    const { titulo } = props;
+    return (
+        <>
+            <h2>{titulo}</h2>
+        </>
+    );
+};
 
-function Contenedor() {
-  
-  return (
-    <>
-      <p>
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
-
-export default Contenedor
+export default Contenedor;
