@@ -1,7 +1,7 @@
 import './Interprete.css';
 
 const Interprete = ( props ) => {
-    const { nombre , imagen , children} = props;
+    const { nombre , imagen , children } = props;
   return (
     <>
     <div className="contenedor-fotografia">
