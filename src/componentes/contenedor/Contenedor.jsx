@@ -1,11 +1,13 @@
-import React from 'react';
-import './Contenedor.css'; // Importar el archivo CSS
+import './Contenedor.css';
 
-const Contenedor = ({ children }) => {
+const Contenedor = ( props ) => {
+    const {children} = props;
   return (
-    <div className="contenedor">
+    <>
+    <div className="contenedor-contenedor">
       {children}
     </div>
+    </>
   );
 };
 
