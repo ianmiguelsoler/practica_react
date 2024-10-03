@@ -1,0 +1,10 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+img{
+    max-width: 300px;
+    min-height: 100px;
+    border-radius: 20px;
+    border-color: black 1;
+    margin: 5px;
+}
