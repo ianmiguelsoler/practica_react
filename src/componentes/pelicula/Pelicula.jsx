@@ -21,14 +21,14 @@ const Pelicula = ({ nombre, director, cartelera, actores, children }) => {
       </div>
       <div className="elencoPelicula">
         <h3>Elenco:</h3>
-        {actores.map((actor, id) => (
+        {actores ?actores.map((actor, id) => (
           <Interprete 
           key={id} 
           nombre={actor.nombre} 
           imagen={actor.imagen}>
             {actor.biografia}
           </Interprete>
-        ))}
+        )): "No tiene elenco esta película"}
       </div>
     </div>
   );
