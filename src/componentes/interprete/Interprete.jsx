@@ -6,7 +6,7 @@ const Interprete = ( props ) => {
     <>
     <div className="contenedor-fotografia">
         <div>
-            <img src={imagen} className='estilos-imagen' alt="Imagen de Teemo - Legue of Legends"></img>
+            <img src={imagen} className='estilos-imagen' alt={imagen}></img>
         </div>
         <div className="interprete-textos">
             <div className="contenedor-nombre"><h1>{nombre}</h1></div>

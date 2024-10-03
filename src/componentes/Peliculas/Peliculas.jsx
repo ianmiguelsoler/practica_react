@@ -1,26 +1,21 @@
-import './Peliculas.css';
-import peli from '../../informacionBDD/peliculas.json';
-import Pelicula from '../pelicula/Pelicula';
+import Pelicula from '../pelicula/Pelicula.jsx';
+import peliculasData from '../../informacionBDD/peliculas.json'; 
 
-function Peliculas() {
-    const peliculas = [...peli.peliculas];
+const Peliculas = () => {
   return (
-    <>
-   <div>
-        {peliculas.length
-          ? peliculas.map((valor, i, a) => {
-              return (
-                <Pelicula
-                key={valor.id}
-                datos={valor} 
-                >
-                  {valor.resumen}
-                </Pelicula>
-              );
-            })
-          : "No se han encontrado peliculas."}
-      </div>
-    </>
+    <div className="peliculas">
+      {peliculasData.peliculas.map((pelicula) => (
+        <Pelicula
+          key={pelicula.id}
+          nombre={pelicula.nombre}
+          director={pelicula.director}
+          cartelera={pelicula.cartelera}
+          actores={pelicula.actores}
+        >
+          {pelicula.resumen}
+        </Pelicula>
+      ))}
+    </div>
   );
 };
 
