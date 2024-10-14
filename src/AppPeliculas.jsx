@@ -5,9 +5,7 @@ const App = () => {
   return (
       <>
       <h1>Contenido dentro del contenedor</h1>
-      <Peliculas>
-
-      </Peliculas>
+      <Peliculas/>
       </>
   );
 };
