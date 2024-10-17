@@ -22,8 +22,10 @@ const Pelicula = (props) => {
       </div>
       </div>
       <div className="elencoPelicula">
+        <div className="elencoTaquillaDiv">
         <h3>Elenco:</h3>
           <Taquilla />
+          </div>
           <Interpretes interpretes={actores} />
       </div>
     </div>

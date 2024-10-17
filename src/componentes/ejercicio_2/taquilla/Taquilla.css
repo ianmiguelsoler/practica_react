@@ -1,0 +1,13 @@
+.taquillaBoton{
+    padding-left: 20px;
+}
+
+.estilosBotonTaquilla{
+    padding: 15px;
+    border-radius: 20px;
+    background-color: rgb(238, 71, 71);
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: large;
+    color: rgb(255, 255, 255);
+}

@@ -1,11 +1,20 @@
 import './Taquilla.css';
+import { ocultar } from "../../../biblioteca/biblioteca.js";
+
 
 const Taquilla = ( props ) => {
-    // const { interpretes } = props;
+    const { recaudaciones } = props;
+    const refe = useRef(null);
+
     return (
     <>
     <div className="taquillaBoton">
-        <button>Holaaaaaaaaaa</button>
+        <button className="estilosBotonTaquilla" onClick={() =>{
+          ocultar();
+        }}>TAQUILLA</button>
+        <p ref={refe}>
+          pene pene
+        </p>
     </div>
     </>
   );
