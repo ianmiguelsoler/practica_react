@@ -4,7 +4,9 @@ import { anadirNumero } from "../biblioteca/biblioteca.js";
 const Numericos = () => {
     
     const refe = useRef(null);
-
+    const anadirNumero = (referencia) => {
+      referencia.current.innerHTML += `<li>El número aleatorio es este ${obtenerNumeroAleatorio()}.</li>`;
+  }
     return (
         <>
             <div>

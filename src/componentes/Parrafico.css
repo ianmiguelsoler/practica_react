@@ -1,0 +1,40 @@
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.elegant-text {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    color: #555;
+}
+
+.elegant-text p {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.elegant-text p::first-letter {
+    font-size: 2em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-right: 5px;
+}
+
+.elegant-text p::selection {
+    background-color: #d1e7dd;
+    color: #333;
+}
+
+.elegant-text p:hover {
+    color: #2c3e50;
+}

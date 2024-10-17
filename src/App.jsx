@@ -1,9 +1,9 @@
 import './App.css';
-import Numericos from './componentes/Numericos.jsx';
+import Parrafico from './componentes/Parrafico.jsx';
 
 const App = () => {
   return (
-    <Numericos />
+    <Parrafico />
   );
 };
 
