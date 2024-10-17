@@ -1,16 +1,9 @@
 import { useRef } from "react";
+import { anadirNumero } from "../biblioteca/biblioteca.js";
 
 const Numericos = () => {
     
     const refe = useRef(null);
-
-    const obtenerNumeroAleatorio = () => {
-        return Math.floor(Math.random() * 1000) + 1;
-    };
-
-    const anadirNumero = (referencia) => {
-      referencia.current.innerHTML += `<li>El número aleatorio es este ${obtenerNumeroAleatorio()}.</li>`;
-    }
 
     return (
         <>
