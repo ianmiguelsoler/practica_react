@@ -8,11 +8,15 @@ const Numericos = () => {
         return Math.floor(Math.random() * 1000) + 1;
     };
 
+    const anadirNumero = (referencia) => {
+      referencia.current.innerHTML += `<li>El número aleatorio es este ${obtenerNumeroAleatorio()}.</li>`;
+    }
+
     return (
         <>
             <div>
                 <button onClick={() =>{
-                  refe.current.innerHTML += `<li>El número aleatorio es este ${obtenerNumeroAleatorio()}.</li>`;
+                 anadirNumero(refe);
                 }}>Añadir numerico</button>
                 <ol ref={refe}></ol>
             </div>
