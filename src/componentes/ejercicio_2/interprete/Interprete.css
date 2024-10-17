@@ -1,0 +1,29 @@
+.contenedor-fotografia {
+    margin: 10px;
+    display: flex;
+    border: 6px solid rgb(86, 230, 43);
+    border-radius: 20px;
+
+}
+.estilos-imagen {
+    max-width: 300px;
+    min-height: fit-content;
+    border-radius: 20px;
+    border-color: black 1;
+    margin: 5px;
+}
+
+.interprete-textos {
+    display: flex;
+    flex-direction: column;
+}
+.contenedor-nombre {
+    font-size: large;
+    font-weight: bolder;
+    padding-left: 2%;
+}
+
+.contenedor-biografia {
+    font-size: medium;
+    padding-left: 2%;
+}
