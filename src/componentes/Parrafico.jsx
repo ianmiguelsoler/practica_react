@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import './Parrafico.css';
-// import { obtenerNumeroAleatorio } from "../biblioteca/biblioteca.js";
+import { cambiarColorParrafo } from "../biblioteca/biblioteca.js";
 
 const Numericos = () => {
     
@@ -8,12 +8,12 @@ const Numericos = () => {
    
     return (
         <>
-            <div class="elegant-text">
+            <div className="elegant-text">
                 <button onClick={() =>{
-                 
+                 cambiarColorParrafo(refe)
                 }}>Cambiar Colorico</button>
 
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
+                <p ref={refe}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, 
                   sed diam nonummy nibh euismod tincidunt ut laoreet dolore 
                   magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
                    quis nostrud exerci tation ullamcorper suscipit lobortis 
