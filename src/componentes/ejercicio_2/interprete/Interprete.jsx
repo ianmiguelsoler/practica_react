@@ -1,7 +1,7 @@
 import './Interprete.css';
 
 const Interprete = ( props ) => {
-    const { nombre , imagen , children } = props;
+    const { nombre , imagen , biografia } = props.datos;
   return (
     <>
     <div className="contenedor-fotografia">
@@ -10,7 +10,7 @@ const Interprete = ( props ) => {
         </div>
         <div className="interprete-textos">
             <div className="contenedor-nombre"><h1>{nombre}</h1></div>
-            <div className="contenedor-biografia"><h3>{children}</h3></div>
+            <div className="contenedor-biografia"><h3>{biografia}</h3></div>
         </div>
     </div>
     </>

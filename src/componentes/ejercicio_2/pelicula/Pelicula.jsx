@@ -1,7 +1,8 @@
-import Interprete from '../interprete/Interprete.jsx';
+import Interpretes from '../interpretes/Interpretes.jsx';
 import './Pelicula.css';
 
-const Pelicula = ({ nombre, director, cartelera, actores, children }) => {
+const Pelicula = (props) => {
+  const { nombre, cartelera, director, actores, children } = props;
   return (
     <div className="contenedorPelicula">
       <div className="encabezadoPelicula">
@@ -21,14 +22,7 @@ const Pelicula = ({ nombre, director, cartelera, actores, children }) => {
       </div>
       <div className="elencoPelicula">
         <h3>Elenco:</h3>
-        {actores ?actores.map((actor, id) => (
-          <Interprete 
-          key={id} 
-          nombre={actor.nombre} 
-          imagen={actor.imagen}>
-            {actor.biografia}
-          </Interprete>
-        )): "No tiene elenco esta película"}
+          <Interpretes interpretes={actores} />
       </div>
     </div>
   );

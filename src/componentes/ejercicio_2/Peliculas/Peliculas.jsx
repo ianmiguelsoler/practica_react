@@ -1,16 +1,18 @@
 import Pelicula from '../pelicula/Pelicula.jsx';
-import peliculasData from '../../informacionBDD/peliculas.json'; 
+import peliculasData from '../../../informacionBDD/peliculas.json'; 
 
-const Peliculas = () => {
+const Peliculas = (props) => {
+  const { listado } = props;
   return (
+    <>
     <div className="peliculas">
-      {peliculasData && peliculasData.peliculas && peliculasData.peliculas.length > 0 ? (
-        peliculasData.peliculas.map((pelicula) => (
+      {listado && listado.peliculas && listado.peliculas.length > 0 ? (
+        listado.peliculas.map((pelicula) => (
           <Pelicula
             key={pelicula.id}
             nombre={pelicula.nombre}
-            director={pelicula.director}
             cartelera={pelicula.cartelera}
+            director={pelicula.director}
             actores={pelicula.actores}
           >
             {pelicula.resumen}
@@ -20,6 +22,7 @@ const Peliculas = () => {
         <p>No hay películas disponibles</p>
       )}
     </div>
+    </>
   );
   
 };

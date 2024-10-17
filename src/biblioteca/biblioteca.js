@@ -1,5 +1,8 @@
 "use strict";
 
+const generarUuidAleatorio = () => {
+    return crypto.randomUUID();
+  };
 
 const obtenerNumeroAleatorio = () => {
     return Math.floor(Math.random() * 1000) + 1;
@@ -17,4 +20,4 @@ const generarColorAleatorio = () => {
 };
 
 
-export { obtenerNumeroAleatorio, cambiarColorParrafo };
+export { obtenerNumeroAleatorio, cambiarColorParrafo, generarUuidAleatorio };
