@@ -11,6 +11,7 @@ const Taquilla = ( props ) => {
     <>
     <div className="taquillaBoton">
     <button className="estilosBotonTaquilla" onClick={() =>{
+      //Llamamos a la funcion ocultar que tenemos en la biblioteca.
                  ocultar(refe);
                 }}>TAQUILLA</button>
         <p ref={refe}>

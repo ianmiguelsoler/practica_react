@@ -1,9 +1,14 @@
+import { useRef } from "react";
 import Interpretes from '../interpretes/Interpretes.jsx';
 import Taquilla from '../taquilla/Taquilla.jsx';
 import './Pelicula.css';
+import { ocultar } from "../../../biblioteca/biblioteca.js";
 
 const Pelicula = (props) => {
   const { nombre, cartelera, director, actores, recaudacion, children } = props;
+  const refe = useRef(null);
+
+  
   return (
     <div className="contenedorPelicula">
       <div className="encabezadoPelicula">
@@ -23,10 +28,13 @@ const Pelicula = (props) => {
       </div>
       <div className="elencoPelicula">
         <div className="elencoTaquillaDiv">
-        <h3>Elenco:</h3>
+        <button className="estilosBotonElenco" onClick={() =>{
+                ocultar(refe);
+                }}>Elenco</button>
+                {/* Voy a pasar recaduacion que tenemos del javascript que nos dice el dinero recaudado. */}
           <Taquilla recaduacion={recaudacion}/>
           </div>
-          <Interpretes interpretes={actores} />
+          <Interpretes ref={refe} interpretes={actores} />
       </div>
     </div>
   );
