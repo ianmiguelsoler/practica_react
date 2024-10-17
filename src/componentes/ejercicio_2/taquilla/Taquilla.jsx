@@ -1,19 +1,20 @@
+import { useRef } from "react";
 import './Taquilla.css';
 import { ocultar } from "../../../biblioteca/biblioteca.js";
 
 
 const Taquilla = ( props ) => {
-    const { recaudaciones } = props;
+    const { recaduacion } = props;
     const refe = useRef(null);
 
     return (
     <>
     <div className="taquillaBoton">
-        <button className="estilosBotonTaquilla" onClick={() =>{
-          ocultar();
-        }}>TAQUILLA</button>
+    <button className="estilosBotonTaquilla" onClick={() =>{
+                 ocultar(refe);
+                }}>TAQUILLA</button>
         <p ref={refe}>
-          pene pene
+          {recaduacion}
         </p>
     </div>
     </>

@@ -15,6 +15,7 @@ const Peliculas = (props) => {
                 cartelera={pelicula.cartelera}
                 director={pelicula.director}
                 actores={pelicula.actores}
+                recaudacion={pelicula.recaudacion}
                 >
                   {pelicula.resumen}
                 </Pelicula>

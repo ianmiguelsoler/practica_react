@@ -3,7 +3,7 @@ import Taquilla from '../taquilla/Taquilla.jsx';
 import './Pelicula.css';
 
 const Pelicula = (props) => {
-  const { nombre, cartelera, director, actores, children } = props;
+  const { nombre, cartelera, director, actores, recaudacion, children } = props;
   return (
     <div className="contenedorPelicula">
       <div className="encabezadoPelicula">
@@ -24,7 +24,7 @@ const Pelicula = (props) => {
       <div className="elencoPelicula">
         <div className="elencoTaquillaDiv">
         <h3>Elenco:</h3>
-          <Taquilla />
+          <Taquilla recaduacion={recaudacion}/>
           </div>
           <Interpretes interpretes={actores} />
       </div>

@@ -21,7 +21,7 @@ const generarColorAleatorio = () => {
 
 
 const ocultar = (referencia) => {
-    referencia.current.classList.toggle('oculto')
+    referencia.current.classList.toggle("oculto")
 };
 
 export { obtenerNumeroAleatorio, cambiarColorParrafo, generarUuidAleatorio, ocultar};
