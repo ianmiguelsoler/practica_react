@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { obtenerNumeroAleatorio } from "../biblioteca/biblioteca.js";
+import { obtenerNumeroAleatorio } from "../../biblioteca/biblioteca.js";
 
 const Numericos = () => {
     

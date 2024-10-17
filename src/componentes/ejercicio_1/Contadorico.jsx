@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import './Contadorico.css';
-import { cambiarColorParrafo } from "../biblioteca/biblioteca.js";
+import { cambiarColorParrafo } from "../../biblioteca/biblioteca.js";
 
 const Contador = () => {
     

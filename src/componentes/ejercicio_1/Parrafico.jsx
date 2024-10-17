@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import './Parrafico.css';
-import { cambiarColorParrafo } from "../biblioteca/biblioteca.js";
+import { cambiarColorParrafo } from "../../biblioteca/biblioteca.js";
 
 const Numericos = () => {
     
