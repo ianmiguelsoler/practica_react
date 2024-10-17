@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import './Parrafico.css';
 // import { obtenerNumeroAleatorio } from "../biblioteca/biblioteca.js";
 
 const Numericos = () => {
