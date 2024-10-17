@@ -1,4 +1,5 @@
 import Interpretes from '../interpretes/Interpretes.jsx';
+import Taquilla from '../taquilla/Taquilla.jsx';
 import './Pelicula.css';
 
 const Pelicula = (props) => {
@@ -22,6 +23,7 @@ const Pelicula = (props) => {
       </div>
       <div className="elencoPelicula">
         <h3>Elenco:</h3>
+          <Taquilla />
           <Interpretes interpretes={actores} />
       </div>
     </div>

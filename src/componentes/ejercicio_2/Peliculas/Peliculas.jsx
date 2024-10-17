@@ -1,14 +1,16 @@
 import Pelicula from '../pelicula/Pelicula.jsx';
+import { generarUuidAleatorio } from "../../../biblioteca/biblioteca.js";
 
 const Peliculas = (props) => {
   const { listado } = props;
   return (
     <>
-    <div className="peliculas">
+    <div className="peliculasDiv">
     {listado.length
           ? listado.map((pelicula) => {
               return (
                 <Pelicula
+                key={generarUuidAleatorio()}
                 nombre={pelicula.nombre}
                 cartelera={pelicula.cartelera}
                 director={pelicula.director}
