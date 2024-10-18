@@ -1,5 +1,6 @@
 "use strict";
 
+//Generador de identificador aleatorio.
 const generarUuidAleatorio = () => {
     return crypto.randomUUID();
   };
@@ -19,7 +20,7 @@ const generarColorAleatorio = () => {
     return `rgb(${r}, ${g}, ${b})`;
 };
 
-
+//Función que le añade la clase oculto o la quita según esté activa o no.
 const ocultar = (referencia) => {
     referencia.current.classList.toggle("oculto")
 };
