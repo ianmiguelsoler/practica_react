@@ -15,7 +15,7 @@ const Taquilla = ( props ) => {
                  ocultar(refe);
                 }}>TAQUILLA</button>
         <p ref={refe}>
-          {recaduacion}
+          <span>La recaudacion ha sido de: </span>{recaduacion}
         </p>
     </div>
     </>
