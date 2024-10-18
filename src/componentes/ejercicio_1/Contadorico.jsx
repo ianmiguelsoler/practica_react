@@ -7,10 +7,7 @@ const Contador = () => {
     const refe = useRef(null);
 
     const incrementar = (referencia) =>{
-        console.log(referencia)
         let numeroSumado = parseInt(referencia.current.innerHTML) + 1;
-        console.log(numeroSumado)
-        console.log(referencia.current.innerHTML = numeroSumado)
         return referencia.current.innerHTML = numeroSumado;
     };
     const decrementar = (referencia) =>{
@@ -35,7 +32,6 @@ const Contador = () => {
                 <button onClick={() =>{
                  decrementar(refe)
                 }}>Decrementar</button>
-
                 <p ref={refe}>0</p>
             </div>
         </>
