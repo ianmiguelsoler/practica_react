@@ -1,0 +1,28 @@
+.pelicula-titulo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pelicula-cartelera-resumen {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px 0;
+}
+
+.pelicula-cartelera img {
+    max-width: 100px;
+    min-height: 50px;
+    border-radius: 20px;
+    border: 1px solid black;
+    margin-right: 20px;
+}
+
+.pelicula-resumen {
+    max-width: 60%;
+}
+
+.pelicula-resumen span {
+    font-size: 16px;
+    line-height: 1.5;
+}

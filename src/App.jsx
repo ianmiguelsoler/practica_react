@@ -1,16 +1,28 @@
 import './App.css';
-import Peliculas from './componentes/ejercicio_2/Peliculas/Peliculas.jsx';
+import Peliculas from './componentes/ejercicio_3/Peliculas/Peliculas.jsx';
 import peliculasData from './informacionBDD/peliculas.json';
-
+import Inicio from './componentes/ejercicio_3/Inicio/Inicio.jsx';
+import { Routes, Route } from "react-router-dom";
 
 const App = () => {
 
   return (
     <>
-      <h1>Contenido dentro del contenedor</h1>
-      {/* Pasamos el listado de peliculas para solo hacer una única peticion en este fichero y no en el resto */}
-      <Peliculas listado={peliculasData.peliculas}/>
-    </>
+    <h1>¡Bienvenido/a a React!</h1>
+    <Menu />
+    <Contenedor>
+      <Routes>
+        <Route path='/' element={<Inicio />} />
+        <Route path='/acerca-de' element={<AcercaDe />} />
+        <Route
+          path='/peliculas'
+          element={<Peliculas listado={peliculasData.peliculas} />}
+        />
+        <Route path='/contacto' element={<Contacto />} />
+        {/* <Route path='*' element={<Error />} /> */}
+      </Routes>
+    </Contenedor>
+  </>
   );
 };
 
