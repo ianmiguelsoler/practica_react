@@ -10,17 +10,17 @@ const Menu = ( ) => {
         <Link className='menu-elemento' to='/'>
           Inicio
         </Link>
-        <Link className='menu-elemento' to='/login'>
-          Login
-        </Link>
         <Link className='menu-elemento' to='/acerca-de'>
-          Acerca de
+          Acerca De
+        </Link>
+        <Link className='menu-elemento' to='/contacto'>
+          Contactos
         </Link>
         <Link className='menu-elemento' to='/peliculas'>
           Películas
         </Link>
-        <Link className='menu-elemento' to='/feo'>
-          Contacto
+        <Link className='menu-elemento' to='/productos'>
+          Productos
         </Link>
       </nav>
     </>

@@ -1,0 +1,7 @@
+.juntoParrafoLogin{
+    display: flex;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 20px;
+    border-color: inherit black;
+}
