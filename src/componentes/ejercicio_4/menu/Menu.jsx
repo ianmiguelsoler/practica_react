@@ -10,7 +10,7 @@ const Menu = ( ) => {
         <Link className='menu-elemento' to='/'>
           Inicio
         </Link>
-        <Link className='menu-elemento' to='/interprete'>
+        <Link className='menu-elemento' to='/interpretes'>
           Intérpretes
         </Link>
         <Link className='menu-elemento' to='/peliculas'>

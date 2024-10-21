@@ -19,7 +19,9 @@ const App = () => {
     <Contenedor>
       <Routes>
         <Route path='/' element={<Inicio />} />
-        <Route path='/acerca-de' element={<Interpretes listadoActores={peliculasData.peliculas.actores}/>} />
+        <Route path='/interpretes' element={<Interpretes interpretes={peliculasData.peliculas[0].actores} />} 
+        />
+
         <Route
           path='/peliculas'
           element={<Peliculas listado={peliculasData.peliculas} />}
