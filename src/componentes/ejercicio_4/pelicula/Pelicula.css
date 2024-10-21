@@ -1,0 +1,123 @@
+.imagenPelicula img {
+    width: 300px;
+    height: 100px;
+    object-fit: cover; /* Para mantener la proporción de la imagen */
+  }
+  
+  /* Contenedor general de la película */
+.contenedorPelicula {
+    border: 2px solid orange;
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Encabezado (Título y Director) */
+  .encabezadoPelicula {
+    margin-bottom: 20px;
+  }
+  
+  .tituloPelicula {
+    color: green;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .directorPelicula {
+    font-size: 16px;
+    margin-top: 5px;
+  }
+  
+  /* Contenedor para Cartelera y Resumen */
+  .imagenYResumen {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  /* Cartelera de la película */
+  .imagenPelicula {
+    border: 2px solid purple;
+    padding: 10px;
+  }
+  
+  .imagenPelicula img {
+    width: 200px;
+    height: 300px;
+  }
+  
+  /* Resumen de la película */
+  .resumenPelicula {
+    border: 4px solid black;
+    border-radius: 20px;
+    margin-left: 2%;
+    padding: 10px;
+  }
+  .imagen-resumen{
+    display: flex;
+  }
+  /* Sección de Elenco */
+  .elencoPelicula {
+    border: 2px solid lightblue;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  
+  .elencoPelicula h3 {
+    color: steelblue;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo para cada intérprete (actor) */
+  .contenedor-fotografia {
+    display: flex;
+    align-items: center;
+    border: 2px solid green;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  .estilos-imagen {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .interprete-textos {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contenedor-nombre h1 {
+    font-size: 18px;
+    margin: 0;
+    color: green;
+  }
+  
+  .contenedor-biografia h3 {
+    font-size: 14px;
+    color: gray;
+    margin: 5px 0 0;
+  }
+  
+  .elencoTaquillaDiv {
+    display: flex;
+    align-items: center;
+  }
+
+  .estilosBotonElenco{
+    padding: 15px;
+    border-radius: 20px;
+    background-color: lightblue;
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: large;
+    color: rgb(255, 255, 255);
+}
+
+.oculto {
+  display: none;
+}

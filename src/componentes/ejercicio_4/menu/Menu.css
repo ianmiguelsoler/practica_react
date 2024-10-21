@@ -1,0 +1,37 @@
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    padding: 20px;
+  }
+  
+  nav .menu-elemento {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 0 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  nav .menu-elemento:hover {
+    background-color: #555;
+    color: #ffd700; /* Dorado */
+  }
+  
+  nav .menu-elemento:active {
+    background-color: #ff4500; /* Naranja fuerte */
+  }
+  
+  nav .menu-elemento:last-child {
+    margin-right: 0;
+  }
+  
+  /* Efecto para cuando el enlace está activo o seleccionado */
+  nav .menu-elemento.active {
+    background-color: #ff4500;
+    color: white;
+  }
+  
