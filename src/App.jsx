@@ -12,14 +12,26 @@ import Error from './componentes/ejercicio_4/error/error.jsx';
 import Interpretes from './componentes/ejercicio_4/interpretes/Interpretes.jsx';
 
 const App = () => {
-
+  //Esta función unifica los arrays de los actores en uno solo.
+  const unirArray = (arraySinUnificar) => {
+    // Usamos map para extraer los actores y flat para unificar todo en un solo array.
+    const arrayUnificado = arraySinUnificar
+      .map(pelicula => pelicula.actores)  // Obtenemos el array de actores de cada película.
+      .flat();  // Unificamos todos los arrays en uno solo.
+  
+    return arrayUnificado;
+  };
+  
+  //Este array unido se envia.
+  const arrayUnido = unirArray(peliculasData.peliculas);
+  
   return (
     <>
     <Menu />
     <Contenedor>
       <Routes>
         <Route path='/' element={<Inicio />} />
-        <Route path='/interpretes' element={<Interpretes interpretes={peliculasData.peliculas[0].actores} />} 
+        <Route path='/interpretes' element={<Interpretes interpretes={arrayUnido} />} 
         />
 
         <Route
