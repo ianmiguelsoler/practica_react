@@ -10,6 +10,7 @@ import PeliculasDirector from '../../submenu/PeliculasDirector.jsx';
 import PeliculasTitulo from '../../submenu/PeliculasTitulo.jsx';
 import AcercaDe from '../../menuPrincipal/acercaDe/AcercaDe.jsx';
 
+
 const Rutas = () => {
      //Esta función unifica los arrays de los actores en uno solo.
   const unirArray = (arraySinUnificar) => {
