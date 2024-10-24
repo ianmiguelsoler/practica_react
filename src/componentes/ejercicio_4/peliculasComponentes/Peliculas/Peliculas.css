@@ -1,0 +1,65 @@
+.pelicula-titulo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pelicula-cartelera-resumen {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px 0;
+}
+
+.pelicula-cartelera img {
+    max-width: 100px;
+    min-height: 50px;
+    border-radius: 20px;
+    border: 1px solid black;
+    margin-right: 20px;
+}
+
+.pelicula-resumen {
+    max-width: 60%;
+}
+
+.pelicula-resumen span {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.navegacion-menu-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3f50e4;
+    padding: 20px;
+  }
+  
+  nav .menu-elemento-peliculas {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 0 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  nav .menu-elemento-peliculas:hover {
+    background-color: #282828;
+    color: #ff6347;
+  }
+  
+  nav .menu-elemento-peliculas:active {
+    background-color: #ff4500; 
+  }
+  
+  nav .menu-elemento-peliculas:last-child {
+    margin-right: 0;
+  }
+  
+  nav .menu-elemento-peliculas.active {
+    background-color: #ff4500;
+    color: white;
+  }
+  

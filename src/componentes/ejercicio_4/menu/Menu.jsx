@@ -6,7 +6,7 @@ const Menu = ( ) => {
   
   return (
     <>
-      <nav>
+      <nav className='navegacion-menu'>
         <Link className='menu-elemento' to='/'>
           Inicio
         </Link>
@@ -16,8 +16,11 @@ const Menu = ( ) => {
         <Link className='menu-elemento' to='/peliculas'>
           Películas
         </Link>
-        <Link className='menu-elemento' to='/productos'>
+        <Link className='menu-elemento' to='/galeria'>
           Galería
+        </Link>
+        <Link className='menu-elemento' to='/acerca-de'>
+          Acerca de
         </Link>
       </nav>
     </>

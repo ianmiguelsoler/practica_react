@@ -1,3 +1,6 @@
+#galeria{
+  display: flex;
+}
 .contenedor-productos {
     display: flex;
     gap: 20px;

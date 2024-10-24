@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import './Taquilla.css';
-import { ocultar } from "../../../biblioteca/biblioteca.js";
+import { ocultar } from "../../../../biblioteca/biblioteca.js";
 
 
 const Taquilla = ( props ) => {
