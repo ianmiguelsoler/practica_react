@@ -5,7 +5,7 @@ import { generarUuidAleatorio } from "../../../../../biblioteca/biblioteca.js";
 
 const Interpretes = forwardRef((props, ref) => {
   const { interpretes } = props;
-  console.log(interpretes); // Verifica los datos
+  console.log(interpretes);
   return (
     <div ref={ref} id='interpretes'>
       {interpretes.length

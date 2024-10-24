@@ -12,7 +12,7 @@ const Imagenes = (props) => {
         <h3>{nombre}</h3>
         <p><strong>Director:</strong> {director}</p>
         <p><strong>Recaudación:</strong> {recaudacion}</p>
-        <h4><strong>Actores:</strong></h4>
+        <p><strong>Actores:</strong></p>
         <ul>
           {actores.map((actor) => (
             <li key={generarUuidAleatorio()}>
