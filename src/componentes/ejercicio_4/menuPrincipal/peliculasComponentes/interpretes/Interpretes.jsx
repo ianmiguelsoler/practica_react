@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import Interprete from "../interprete/Interprete.jsx";
-import { generarUuidAleatorio } from "../../../../biblioteca/biblioteca.js";
+import { generarUuidAleatorio } from "../../../../../biblioteca/biblioteca.js";
 
 
 const Interpretes = forwardRef((props, ref) => {

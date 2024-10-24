@@ -2,7 +2,7 @@ import { useRef } from "react";
 import Interpretes from '../interpretes/Interpretes.jsx';
 import Taquilla from '../taquilla/Taquilla.jsx';
 import './Pelicula.css';
-import { ocultar } from "../../../../biblioteca/biblioteca.js";
+import { ocultar } from "../../../../../biblioteca/biblioteca.js";
 
 const Pelicula = (props) => {
   const { nombre, cartelera, director, actores, recaudacion, children } = props;

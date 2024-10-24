@@ -1,5 +1,5 @@
 import Pelicula from '../pelicula/Pelicula.jsx';
-import { generarUuidAleatorio } from "../../../../biblioteca/biblioteca.js";
+import { generarUuidAleatorio } from "../../../../../biblioteca/biblioteca.js";
 import { Link, Outlet } from 'react-router-dom';
 import './Peliculas.css';
 
