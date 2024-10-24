@@ -5,9 +5,9 @@ import Interpretes from '../../menuPrincipal/peliculasComponentes/interpretes/In
 import Inicio from '../../menuPrincipal/Inicio/Inicio.jsx';
 import Peliculas from '../../menuPrincipal/peliculasComponentes/Peliculas/Peliculas.jsx';
 import peliculasData from '../../../../informacionBDD/peliculas.json';
-import PeliculasInterprete from '../../submenu/PeliculasInterprete.jsx';
-import PeliculasDirector from '../../submenu/PeliculasDirector.jsx';
-import PeliculasTitulo from '../../submenu/PeliculasTitulo.jsx';
+import PeliculasInterprete from '../../menuPrincipal/peliculasComponentes/submenu/PeliculasInterprete.jsx';
+import PeliculasDirector from '../../menuPrincipal/peliculasComponentes/submenu/PeliculasDirector.jsx';
+import PeliculasTitulo from '../../menuPrincipal/peliculasComponentes/submenu/PeliculasTitulo.jsx';
 import AcercaDe from '../../menuPrincipal/acercaDe/AcercaDe.jsx';
 
 
