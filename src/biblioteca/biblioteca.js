@@ -25,4 +25,16 @@ const ocultar = (referencia) => {
     referencia.current.classList.toggle("oculto")
 };
 
-export { obtenerNumeroAleatorio, cambiarColorParrafo, generarUuidAleatorio, ocultar};
+//!----------Función para unificar un array--------En el fichero rutas
+ //Esta función unifica los arrays de los actores en uno solo.
+ const unirArray = (arraySinUnificar) => {
+    // Usamos map para extraer los actores y flat para unificar todo en un solo array.
+    const arrayUnificado = arraySinUnificar
+      .map(pelicula => pelicula.actores)  // Obtenemos el array de actores de cada película.
+      .flat();  // Unificamos todos los arrays en uno solo.
+  
+    return arrayUnificado;
+  };
+
+
+export { obtenerNumeroAleatorio, cambiarColorParrafo, generarUuidAleatorio, ocultar, unirArray};

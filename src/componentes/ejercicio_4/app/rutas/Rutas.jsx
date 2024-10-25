@@ -12,19 +12,11 @@ import AcercaDe from '../../menuPrincipal/acercaDe/AcercaDe.jsx';
 import GaleriasInterprete from '../../menuPrincipal/galeriaMain/subMenuGaleria/GaleriasInterprete.jsx';
 import GaleriasDirector from '../../menuPrincipal/galeriaMain/subMenuGaleria/GaleriasDirector.jsx';
 import GaleriasTitulo from '../../menuPrincipal/galeriaMain/subMenuGaleria/GaleríasTitulo.jsx';
+import {unirArray} from '../../../../biblioteca/biblioteca.js';
 
-const Rutas = () => {
-     //Esta función unifica los arrays de los actores en uno solo.
-  const unirArray = (arraySinUnificar) => {
-    // Usamos map para extraer los actores y flat para unificar todo en un solo array.
-    const arrayUnificado = arraySinUnificar
-      .map(pelicula => pelicula.actores)  // Obtenemos el array de actores de cada película.
-      .flat();  // Unificamos todos los arrays en uno solo.
+const Rutas = () => { 
   
-    return arrayUnificado;
-  };
-  
-  //Este array unido se envia.
+  //Este array unido se envia a la biblioteca de funciones.
   const arrayUnido = unirArray(peliculasData.peliculas);
     return (
     <>
