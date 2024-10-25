@@ -9,7 +9,9 @@ import PeliculasInterprete from '../../menuPrincipal/peliculasComponentes/submen
 import PeliculasDirector from '../../menuPrincipal/peliculasComponentes/submenu/PeliculasDirector.jsx';
 import PeliculasTitulo from '../../menuPrincipal/peliculasComponentes/submenu/PeliculasTitulo.jsx';
 import AcercaDe from '../../menuPrincipal/acercaDe/AcercaDe.jsx';
-
+import GaleriasInterprete from '../../menuPrincipal/galeriaMain/subMenuGaleria/GaleriasInterprete.jsx';
+import GaleriasDirector from '../../menuPrincipal/galeriaMain/subMenuGaleria/GaleriasDirector.jsx';
+import GaleriasTitulo from '../../menuPrincipal/galeriaMain/subMenuGaleria/GaleríasTitulo.jsx';
 
 const Rutas = () => {
      //Esta función unifica los arrays de los actores en uno solo.
@@ -29,15 +31,16 @@ const Rutas = () => {
      <Routes>
         <Route path='/' element={<Inicio />} />
         <Route path='/interpretes' element={<Interpretes interpretes={arrayUnido} />}/>
-        <Route
-          path='/peliculas'
-          element={<Peliculas listado={peliculasData.peliculas} />}>
-             <Route path='interpretes' element={<PeliculasInterprete />}/>
-             <Route path='director' element={<PeliculasDirector />}/>
-             <Route path='titulo' element={<PeliculasTitulo />}/>
-
+        <Route path='/peliculas' element={<Peliculas listado={peliculasData.peliculas} />}>
+            <Route path='interpretes' element={<PeliculasInterprete />}/>
+            <Route path='director' element={<PeliculasDirector />}/>
+            <Route path='titulo' element={<PeliculasTitulo />}/>
           </Route>
-        <Route path='/galeria' element={<Galeria galeria={peliculasData.peliculas} />} />
+        <Route path='/galeria' element={<Galeria galeria={peliculasData.peliculas} />}>
+            <Route path='interpretes' element={<GaleriasInterprete />}/>
+            <Route path='director' element={<GaleriasDirector />}/>
+            <Route path='titulo' element={<GaleriasTitulo />}/>
+        </Route>
         <Route path='/acerca-de' element={<AcercaDe />} />
 
         <Route path='*' element={<Error />} />
