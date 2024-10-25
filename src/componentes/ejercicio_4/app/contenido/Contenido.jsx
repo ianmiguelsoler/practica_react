@@ -4,7 +4,10 @@ const Contenido = ( props ) => {
     const {children} = props;
   return (
     <>
-      <h2 className="contenido-app">{children}</h2>
+    <div classNameName="contenido-app">
+      {children}
+    </div>
+       
     </>
   );
 };

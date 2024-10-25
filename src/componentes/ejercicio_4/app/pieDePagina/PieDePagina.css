@@ -1,10 +1,10 @@
 .pie-de-pagina {
     padding: 20px;
     margin: 10px;
-    border: 6px solid #000000;
+    border: 6px solid #416cfa;
     border-radius: 8px;
     background-color: #f4f4f4;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(40, 151, 255, 0.1);
     justify-content: center;
     align-items: center;
   }
