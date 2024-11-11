@@ -37,4 +37,17 @@ const ocultar = (referencia) => {
   };
 
 
-export { obtenerNumeroAleatorio, cambiarColorParrafo, generarUuidAleatorio, ocultar, unirArray};
+  const obtenerNumeroAleatorioSinRepetir = (arrayDeObjetos) => {
+    let nuevoNumero;
+
+    do {
+        nuevoNumero = obtenerNumeroAleatorio();
+    } while (arrayDeObjetos.some(objeto => objeto.numero === nuevoNumero));
+
+    // Añadir el nuevo número como un objeto al array
+    arrayDeObjetos.push({ numero: nuevoNumero });
+
+    return nuevoNumero;
+};
+
+export { obtenerNumeroAleatorio, cambiarColorParrafo, generarUuidAleatorio, ocultar, unirArray, obtenerNumeroAleatorioSinRepetir};

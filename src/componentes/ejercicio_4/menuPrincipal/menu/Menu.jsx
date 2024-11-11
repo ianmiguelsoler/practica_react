@@ -10,14 +10,8 @@ const Menu = ( ) => {
         <Link className='menu-elemento' to='/'>
           Inicio
         </Link>
-        <Link className='menu-elemento' to='/interpretes'>
-          Intérpretes
-        </Link>
-        <Link className='menu-elemento' to='/peliculas'>
-          Películas
-        </Link>
-        <Link className='menu-elemento' to='/galeria'>
-          Galería
+        <Link className='menu-elemento' to='/listado'>
+          Listado
         </Link>
         <Link className='menu-elemento' to='/acerca-de'>
           Acerca de
