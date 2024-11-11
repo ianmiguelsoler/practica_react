@@ -1,6 +1,16 @@
 import React, { useState } from 'react';
 import Discente from '../Discentes/Discentes.jsx';
 import Filtros from '../Filtros/Filtros.jsx';
+import { 
+    filtrar2DAW, 
+    filtrarPrimerCurso, 
+    filtrarCicloDAW, 
+    filtrarLectura, 
+    reiniciarListado,
+    ordenarPorApellido,
+} from '../../../../../biblioteca/biblioteca.js';
+
+
 
 const Matricula = ({ listado }) => {
 
@@ -8,31 +18,15 @@ const Matricula = ({ listado }) => {
     const [discentes, setDiscentes] = useState(listado);
     const [filteredDiscentes, setFilteredDiscentes] = useState(listado);
 
-     // Objeto de acciones.
-     const acciones = {
-        filtrar2DAW,
-        filtrarPrimerCurso,
-        filtrarCicloDAW,
-        filtrarLectura,
-        ordenarPorApellido,
-        reiniciarListado,
+    // Objeto de acciones.
+    const acciones = {
+        filtrar2DAW: () => setFilteredDiscentes(filtrar2DAW(discentes)),
+        filtrarPrimerCurso: () => setFilteredDiscentes(filtrarPrimerCurso(discentes)),
+        filtrarCicloDAW: () => setFilteredDiscentes(filtrarCicloDAW(discentes)),
+        filtrarLectura: () => setFilteredDiscentes(filtrarLectura(discentes)),
+        reiniciarListado: () => setFilteredDiscentes(reiniciarListado(discentes)),
+        ordenarPorApellido: (ascendente) => ordenarPorApellido(ascendente, filteredDiscentes, setFilteredDiscentes),
     };
-
-    // Funciones de filtrado y acciones
-    const filtrar2DAW = () => setFilteredDiscentes(discentes.filter(d => d.curso === '2DAW'));
-    const filtrarPrimerCurso = () => setFilteredDiscentes(discentes.filter(d => d.curso.startsWith('1')));
-    const filtrarCicloDAW = () => setFilteredDiscentes(discentes.filter(d => d.curso.includes('DAW')));
-    const filtrarLectura = () => setFilteredDiscentes(discentes.filter(d => d.aficiones.includes('lectura')));
-    const reiniciarListado = () => setFilteredDiscentes(discentes);
-
-    // Función de orden
-    const ordenarPorApellido = (ascendente = true) => {
-        const sorted = [...filteredDiscentes].sort((a, b) =>
-            ascendente ? a.apellidos.localeCompare(b.apellidos) : b.apellidos.localeCompare(a.apellidos)
-        );
-        setFilteredDiscentes(sorted);
-    };
-
 
     // Función para eliminar un discente.
     const eliminarDiscente = (id) => {
@@ -43,9 +37,13 @@ const Matricula = ({ listado }) => {
         <div>
             <Filtros acciones={acciones} />
             <ul>
-                {filteredDiscentes.map(discente => (
-                    <Discente key={discente.id} discente={discente} eliminarDiscente={eliminarDiscente} />
-                ))}
+                {filteredDiscentes.length ? (
+                    filteredDiscentes.map((discente) => (
+                        <Discente key={discente.id} discente={discente} eliminarDiscente={eliminarDiscente} />
+                    ))
+                ) : (
+                    <p>No existen Discentes todavía</p>
+                )}
             </ul>
         </div>
     );

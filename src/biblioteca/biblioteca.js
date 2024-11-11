@@ -51,11 +51,30 @@ const obtenerNumeroAleatorioSinRepetir = (arrayDeObjetos) => {
 
 
 // funciones.js
-export const filtrar2DAW = (discentes) => discentes.filter(d => d.curso === '2DAW');
-export const filtrarPrimerCurso = (discentes) => discentes.filter(d => d.curso.startsWith('1'));
-export const filtrarCicloDAW = (discentes) => discentes.filter(d => d.curso.includes('DAW'));
-export const filtrarLectura = (discentes) => discentes.filter(d => d.aficiones.includes('lectura'));
-export const reiniciarListado = (discentes) => discentes;
+const filtrar2DAW = (discentes) => discentes.filter(d => d.curso === '2DAW');
+const filtrarPrimerCurso = (discentes) => discentes.filter(d => d.curso.startsWith('1'));
+const filtrarCicloDAW = (discentes) => discentes.filter(d => d.curso.includes('DAW'));
+const filtrarLectura = (discentes) => discentes.filter(d => d.aficiones.includes('lectura'));
+const reiniciarListado = (discentes) => discentes;
+ // Función de orden
+ const ordenarPorApellido = (ascendente = true) => {
+    const sorted = [...filteredDiscentes].sort((a, b) =>
+        ascendente ? a.apellidos.localeCompare(b.apellidos) : b.apellidos.localeCompare(a.apellidos)
+    );
+    setFilteredDiscentes(sorted);
+};
 
-
-export { obtenerNumeroAleatorio, cambiarColorParrafo, generarUuidAleatorio, ocultar, unirArray, obtenerNumeroAleatorioSinRepetir};
+export { 
+    obtenerNumeroAleatorio,
+    cambiarColorParrafo,
+    generarUuidAleatorio,
+    ocultar, 
+    unirArray, 
+    obtenerNumeroAleatorioSinRepetir,
+    filtrar2DAW,
+    filtrarPrimerCurso,
+    filtrarCicloDAW, 
+    filtrarLectura, 
+    reiniciarListado,
+    ordenarPorApellido
+};
