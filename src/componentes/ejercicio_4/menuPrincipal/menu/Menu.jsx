@@ -7,14 +7,12 @@ const Menu = ( ) => {
   return (
     <>
       <nav className='navegacion-menu'>
-        <Link className='menu-elemento' to='/'>
-          Inicio
-        </Link>
+        
         <Link className='menu-elemento' to='/listado'>
           Listado
         </Link>
-        <Link className='menu-elemento' to='/acerca-de'>
-          Acerca de
+        <Link className='menu-elemento' to='/matricula'>
+          Matricula
         </Link>
       </nav>
     </>

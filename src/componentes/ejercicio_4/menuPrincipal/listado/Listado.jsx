@@ -7,11 +7,13 @@ const Listado = () => {
   const listadoInicial = [];
   const [listado, setListado] = useState(listadoInicial);
 
+  // Función para generar un nuevo número aleatorio sin repetir.
   const generarListado = () => {
     let nuevoObjeto = obtenerNumeroAleatorioSinRepetir(listado);
-    setListado([...listado, nuevoObjeto]);
+    setListado([...listado, nuevoObjeto]);// Estado para almacenar y actualizar el listado de números generados.
   };
-
+  
+  // Función para eliminar todos los números generados y restablecer el listado.
   const eliminarListado = () => {
     setListado(listadoInicial);
   };
@@ -23,6 +25,7 @@ const Listado = () => {
         <button onClick={eliminarListado}>Eliminar</button>
       </p>
       <div>
+        <span>Contador de Números Genereados: <code>{listado.length}</code></span>
         <p>Listado de objetos generados:</p>
       </div>
       <div className="interprete-textos">
