@@ -4,7 +4,7 @@ const Contenido = ( props ) => {
     const {children} = props;
   return (
     <>
-    <div classNameName="contenido-app">
+    <div className="contenido-app">
       {children}
     </div>
        
