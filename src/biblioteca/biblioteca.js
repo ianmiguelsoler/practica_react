@@ -50,4 +50,12 @@ const obtenerNumeroAleatorioSinRepetir = (arrayDeObjetos) => {
 };
 
 
+// funciones.js
+export const filtrar2DAW = (discentes) => discentes.filter(d => d.curso === '2DAW');
+export const filtrarPrimerCurso = (discentes) => discentes.filter(d => d.curso.startsWith('1'));
+export const filtrarCicloDAW = (discentes) => discentes.filter(d => d.curso.includes('DAW'));
+export const filtrarLectura = (discentes) => discentes.filter(d => d.aficiones.includes('lectura'));
+export const reiniciarListado = (discentes) => discentes;
+
+
 export { obtenerNumeroAleatorio, cambiarColorParrafo, generarUuidAleatorio, ocultar, unirArray, obtenerNumeroAleatorioSinRepetir};

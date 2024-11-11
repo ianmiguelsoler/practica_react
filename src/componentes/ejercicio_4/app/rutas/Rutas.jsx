@@ -10,11 +10,7 @@ const Rutas = () => {
     return (
     <>
      <Routes>
-        <Route path='/matricula' element={<Matricula listado={matriculasData.discentes} />}>
-            {/* <Route path='interpretes' element={<PeliculasInterprete />}/>
-            <Route path='director' element={<PeliculasDirector />}/>
-            <Route path='titulo' element={<PeliculasTitulo />}/> */}
-          </Route>
+        <Route path='/matricula' element={<Matricula listado={matriculasData.discentes} />}/>
           <Route path='/Listado' element={<Listado />}/>
         <Route path='*' element={<Error />} />
       </Routes>
