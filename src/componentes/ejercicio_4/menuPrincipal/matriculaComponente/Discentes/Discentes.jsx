@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Discentes.css";
 
 const Discente = ({ discente, eliminarDiscente }) => {
     return (

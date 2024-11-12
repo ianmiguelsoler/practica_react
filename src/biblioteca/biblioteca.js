@@ -57,12 +57,13 @@ const filtrarCicloDAW = (discentes) => discentes.filter(d => d.curso.includes('D
 const filtrarLectura = (discentes) => discentes.filter(d => d.aficiones.includes('lectura'));
 const reiniciarListado = (discentes) => discentes;
  // Función de orden
- const ordenarPorApellido = (ascendente = true) => {
-    const sorted = [...filteredDiscentes].sort((a, b) =>
+ const ordenarPorApellido = (ascendente, discentes) => {
+    return [...discentes].sort((a, b) =>
         ascendente ? a.apellidos.localeCompare(b.apellidos) : b.apellidos.localeCompare(a.apellidos)
     );
-    setFilteredDiscentes(sorted);
 };
+
+
 
 export { 
     obtenerNumeroAleatorio,

@@ -8,7 +8,9 @@ import {
     filtrarLectura, 
     reiniciarListado,
     ordenarPorApellido,
+    generarUuidAleatorio
 } from '../../../../../biblioteca/biblioteca.js';
+import './Matricula.css';
 
 
 
@@ -25,8 +27,12 @@ const Matricula = ({ listado }) => {
         filtrarCicloDAW: () => setFilteredDiscentes(filtrarCicloDAW(discentes)),
         filtrarLectura: () => setFilteredDiscentes(filtrarLectura(discentes)),
         reiniciarListado: () => setFilteredDiscentes(reiniciarListado(discentes)),
-        ordenarPorApellido: (ascendente) => ordenarPorApellido(ascendente, filteredDiscentes, setFilteredDiscentes),
+        ordenarPorApellido: (ascendente) => {
+            const ordenados = ordenarPorApellido(ascendente, filteredDiscentes);
+            setFilteredDiscentes(ordenados);
+        },
     };
+    
 
     // Función para eliminar un discente.
     const eliminarDiscente = (id) => {
@@ -34,12 +40,16 @@ const Matricula = ({ listado }) => {
     };
 
     return (
-        <div>
-            <Filtros acciones={acciones} />
-            <ul>
+        <div className="matricula-container">
+            <div className="filtros-container">
+                <Filtros acciones={acciones} />
+            </div>
+            <ul className="discentes-list">
                 {filteredDiscentes.length ? (
                     filteredDiscentes.map((discente) => (
-                        <Discente key={discente.id} discente={discente} eliminarDiscente={eliminarDiscente} />
+                        <li className="discente-item" key={generarUuidAleatorio()}>
+                            <Discente discente={discente} eliminarDiscente={eliminarDiscente} />
+                        </li>
                     ))
                 ) : (
                     <p>No existen Discentes todavía</p>
