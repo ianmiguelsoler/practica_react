@@ -7,7 +7,6 @@ const Menu = ( ) => {
   return (
     <>
       <nav className='navegacion-menu'>
-        
         <Link className='menu-elemento' to='/listado'>
           Listado
         </Link>
