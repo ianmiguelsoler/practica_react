@@ -11,7 +11,7 @@ const Rutas = () => {
     <>
      <Routes>
         <Route path='/matricula' element={<Matricula listado={matriculasData.discentes} />}/>
-          <Route path='/Listado' element={<Listado />}/>
+          <Route path='/listado' element={<Listado />}/>
         <Route path='*' element={<Error />} />
       </Routes>
     </>
