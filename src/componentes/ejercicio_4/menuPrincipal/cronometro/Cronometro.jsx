@@ -1,35 +1,43 @@
 import './Cronometro.css';
 import React, { useEffect, useState } from "react";
-import { generarUuidAleatorio } from "../../../../biblioteca/biblioteca.js";
+import { formatearTiempo } from "../../../../biblioteca/biblioteca.js";
 
 const Cronometro = () => {
-  // const [ejeY, setEjeY] = useState(0);
-  // const [ejeX, setEjeX] = useState(0);
+  const [tiempo, setTiempo] = useState(0); // Estado para el tiempo en milisegundos.
+  const [activo, setActivo] = useState(true); // Estado para controlar si el cronómetro está activo o no.
 
-  // useEffect(() => {
-  //   // Función para actualizar las coordenadas.
-  //   const actualizarCoordenadas = (event) => {
-  //     setEjeX(event.clientX);
-  //     setEjeY(event.clientY);
-  //   };
+  useEffect(() => {
+    let intervalo;
 
-  //   // Añade el evento.
-  //   document.addEventListener("mousemove", actualizarCoordenadas);
+    if (activo) {
+      intervalo = setInterval(() => {
+        setTiempo((prevTiempo) => prevTiempo + 10); // Incremento en 10ms.
+      }, 10); // Intervalo de 10ms para mostrar centésimas.
+    }
 
-  //   // Limpia el evento cuando se desmonta el componente.
-  //   return () => {
-  //     document.removeEventListener("mousemove", actualizarCoordenadas);
-  //     console.log(`Se ha quitado el evento del Localizador.`);
-  //   };
-  // }, []); // Se ejecuta solo al montar y desmontar el componente.
+    // Limpieza al desmontar el componente o cuando `activo` cambia.
+    return () => {
+      clearInterval(intervalo);
+    };
+  }, [activo]); // Se ejecuta al montar y cada vez que cambia `activo`.
+
+  // Función para manejar el reinicio.
+  const reiniciarCronometro = () => {
+    setTiempo(0);
+    setActivo(false); // Detiene el cronómetro al reiniciar.
+  };
 
   return (
     <div className="contenedor-fotografia">
       <p className="localizador-coordenadas">
-        <span>Eje X: <code>{ejeX}</code></span>
-        <br />
-        <span>Eje Y: <code>{ejeY}</code></span>
+        <span>Tiempo: <code>{formatearTiempo(tiempo)}</code></span>
       </p>
+      <div className="botones">
+        <button onClick={() => setActivo((prevActivo) => !prevActivo)}>
+          {activo ? "Parar" : "Iniciar"}
+        </button>
+        <button onClick={reiniciarCronometro}>Reiniciar</button>
+      </div>
     </div>
   );
 };

@@ -51,6 +51,18 @@ const obtenerNumeroAleatorioSinRepetir = (arrayDeObjetos) => {
 
 
 
+// Función para formatear el tiempo.
+const formatearTiempo = (tiempo) => {
+    const milisegundos = tiempo % 1000;
+    const segundos = Math.floor((tiempo / 1000) % 60);
+    const minutos = Math.floor(tiempo / 60000);
+    return `${minutos.toString().padStart(2, "0")}:${segundos
+      .toString()
+      .padStart(2, "0")}:${Math.floor(milisegundos / 10)
+      .toString()
+      .padStart(2, "0")}`;
+  };
+
 
 export { 
     obtenerNumeroAleatorio,
@@ -59,5 +71,6 @@ export {
     ocultar, 
     unirArray, 
     obtenerNumeroAleatorioSinRepetir,
-    generarColorAleatorio
+    generarColorAleatorio,
+    formatearTiempo
 };
