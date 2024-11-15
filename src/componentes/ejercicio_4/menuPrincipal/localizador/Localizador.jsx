@@ -19,7 +19,7 @@ const Localizador = () => {
     // Limpia el evento cuando se desmonta el componente.
     return () => {
       document.removeEventListener("mousemove", actualizarCoordenadas);
-      console.log(`Se ha quitado el evento del document.`);
+      console.log(`Se ha quitado el evento del Localizador.`);
     };
   }, []); // Se ejecuta solo al montar y desmontar el componente.
 
