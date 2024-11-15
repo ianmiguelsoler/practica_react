@@ -1,0 +1,69 @@
+/* Listado.css */
+.localizador-coordenadas{
+    display: flex;
+    justify-content: space-around;
+}
+.contenedor-fotografia {
+    padding: 20px;
+    background-color: #f0f4f8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 450px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.contenedor-fotografia p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.interprete-textos {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:active {
+    background-color: #388e3c;
+}
+
+button:last-of-type {
+    background-color: #f44336;
+}
+
+button:last-of-type:hover {
+    background-color: #e53935;
+}
+
+button:last-of-type:active {
+    background-color: #d32f2f;
+}
+
+code{
+    font-size: 25px;
+    color: #4c9baf;
+    background-color: #e0eff7;
+    padding: 10px;
+    margin: 5px 0;
+    text-align: center;
+    border: 1px solid #4c93af;
+    border-radius: 10px;
+}

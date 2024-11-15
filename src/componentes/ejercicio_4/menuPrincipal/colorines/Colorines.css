@@ -1,5 +1,8 @@
 /* Listado.css */
-
+.localizador-coordenadas{
+    display: flex;
+    justify-content: space-around;
+}
 .contenedor-fotografia {
     padding: 20px;
     background-color: #f0f4f8;

@@ -50,19 +50,6 @@ const obtenerNumeroAleatorioSinRepetir = (arrayDeObjetos) => {
 };
 
 
-// funciones.js
-const filtrar2DAW = (discentes) => discentes.filter(d => d.curso === '2DAW');
-const filtrarPrimerCurso = (discentes) => discentes.filter(d => d.curso.startsWith('1'));
-const filtrarCicloDAW = (discentes) => discentes.filter(d => d.curso.includes('DAW'));
-const filtrarLectura = (discentes) => discentes.filter(d => d.aficiones.includes('lectura'));
-const reiniciarListado = (discentes) => discentes;
- // Función de orden
- const ordenarPorApellido = (ascendente, discentes) => {
-    return [...discentes].sort((a, b) =>
-        ascendente ? a.apellidos.localeCompare(b.apellidos) : b.apellidos.localeCompare(a.apellidos)
-    );
-};
-
 
 
 export { 
@@ -77,5 +64,6 @@ export {
     filtrarCicloDAW, 
     filtrarLectura, 
     reiniciarListado,
-    ordenarPorApellido
+    ordenarPorApellido,
+    generarColorAleatorio
 };
