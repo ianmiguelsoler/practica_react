@@ -7,13 +7,14 @@ import Cabecera from './componentes/ejercicio_4/app/cabecera/Cabecera.jsx';
 import Localizador from './componentes/ejercicio_4/menuPrincipal/localizador/Localizador.jsx';
 import Colorines from './componentes/ejercicio_4/menuPrincipal/colorines/Colorines.jsx';
 import Contador from './componentes/ejercicio_4/menuPrincipal/contador/Contador.jsx';
+import Cronometro from './componentes/ejercicio_4/menuPrincipal/cronometro/Cronometro.jsx';
 
 const App = () => {
   const valorInicial = false;
   const [mostrarLocalizador, setMostrarLocalizador] = useState(valorInicial);
   const [mostrarColorines, setMostrarColorines] = useState(valorInicial);
   const [mostrarContador, setMostrarContador] = useState(valorInicial);
-  // const [mostrar, setMostrar] = useState(valorInicial);
+  const [mostrarCronometro, setMostrarCronometro] = useState(valorInicial);
 
   return (
     <>
@@ -41,10 +42,18 @@ const App = () => {
           >
             Montar/desmontar componente Contador
           </button>
+          <button
+            onClick={() => {
+              setMostrarCronometro(!mostrarCronometro);
+            }}
+          >
+            Montar/desmontar componente Contador
+          </button>
           {/* Controla si mostrar o desmontar el componente Localizador */}
           {mostrarLocalizador && <Localizador />}
           {mostrarColorines && <Colorines />}
           {mostrarContador && <Contador />}
+          {mostrarCronometro && <Cronometro />}
         </Contenido>
         <PieDePagina>Esto es el Pie de Página</PieDePagina>
       </Contenedor>
