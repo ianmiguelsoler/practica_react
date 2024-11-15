@@ -21,14 +21,14 @@ const App = () => {
         <Contenido>
           <button
             onClick={() => {
-              setMostrar(!mostrarLocalizador);
+              setMostrarLocalizador(!mostrarLocalizador);
             }}
           >
             Montar/desmontar componente
           </button>
           <button
             onClick={() => {
-              setMostrar(!mostrarColorines);
+              setMostrarColorines(!mostrarColorines);
             }}
           >
             Montar/desmontar componente

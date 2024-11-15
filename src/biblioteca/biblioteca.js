@@ -59,11 +59,5 @@ export {
     ocultar, 
     unirArray, 
     obtenerNumeroAleatorioSinRepetir,
-    filtrar2DAW,
-    filtrarPrimerCurso,
-    filtrarCicloDAW, 
-    filtrarLectura, 
-    reiniciarListado,
-    ordenarPorApellido,
     generarColorAleatorio
 };

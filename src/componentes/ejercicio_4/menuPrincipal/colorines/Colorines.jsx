@@ -1,31 +1,29 @@
 import './Colorines.css';
 import React, { useEffect, useState } from "react";
-import { generarUuidAleatorio, generarColorAleatorio } from "../../../../biblioteca/biblioteca.js";
+import { generarColorAleatorio } from "../../../../biblioteca/biblioteca.js";
 
 const Colorines = () => {
   const [colorDeFondo, setColorDeFondo] = useState("");
 
+  // Función para manejar el evento de clic y actualizar el estado.
   const cambiarColorDeFondo = () => {
     const nuevoColor = generarColorAleatorio();
     setColorDeFondo(nuevoColor);
   };
 
   useEffect(() => {
-    // Función para actualizar las coordenadas.
-    cambiarColorDeFondo()
+    // Inicializa el color de fondo al montar el componente.
+    cambiarColorDeFondo();
 
-    document.style.backgroundColor = colorDeFondo
+    // Añade el evento al documento
+    document.addEventListener("click", cambiarColorDeFondo);
 
-    // Añade el evento.
-    document.addEventListener("click", generarColorAleatorio);
-
-    // Limpia el evento cuando se desmonta el componente.
+    // Limpia el evento cuando el componente se desmonta.
     return () => {
-      document.removeEventListener("click", generarColorAleatorio);
-      console.log(`Se ha quitado el evento del document.`);
+      document.removeEventListener("click", cambiarColorDeFondo);
+      console.log(`Se ha quitado el evento del Cambio de color.`);
     };
   }, []); // Se ejecuta solo al montar y desmontar el componente.
-
 
   useEffect(() => {
     // Cambia el color de fondo cuando `colorDeFondo` cambia.
