@@ -1,0 +1,162 @@
+/* Estilos generales para el formulario */
+#formularioDiscos {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+  }
+  
+  fieldset {
+    border: 1px solid #ddd;
+    padding: 30px;
+    border-radius: 8px;
+  }
+  
+  legend {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  label {
+    display: block;
+    font-size: 1em;
+    margin: 10px 0 5px;
+    color: #555;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #4a90e2;
+    transform: scale(1.2);
+  }
+  
+  /* Efectos de foco */
+  input[type="text"]:focus,
+  input[type="number"]:focus,
+  select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Estilo para los campos con error */
+  .input-error {
+    border: 2px solid red !important;
+  }
+  
+  /* Estilos para los mensajes de error */
+  .mensaje-error {
+    font-family: Arial, sans-serif;
+    color: red;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 2px;
+    display: block;
+  }
+  
+  /* Estilos para el contenedor de resultados */
+  #resultado {
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    transition: all 0.3s ease;
+  }
+  
+  /* Lista de discos */
+  #resultado ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #resultado ul li {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  #resultado ul li:hover {
+    background-color: #f0f8ff;
+  }
+  
+  #resultado ul li strong {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  #resultado ul li span {
+    display: block;
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
+  
+  #controles {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Botones */
+  button,
+  #botonGuardarDisco {
+    align-items: center;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 5px;
+    color: #ffffff;
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover,
+  #botonGuardarDisco:hover {
+    background-color: #357abd;
+  }
+  
+  button:active,
+  #botonGuardarDisco:active {
+    background-color: #2c5d8a;
+  }
+  
+  /* Estilo normal de los inputs */
+  input,
+  select {
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 1rem;
+  }
+  
+  /* Estilo para el campo de checkbox */
+  .estilosPrestado {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
