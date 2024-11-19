@@ -1,0 +1,54 @@
+/* Estilo general del contenedor */
+.lista-discos-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.lista-discos-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Mensaje cuando no hay discos */
+.lista-discos-empty {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Lista de discos */
+.lista-discos-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Elementos de la lista */
+.lista-discos-item {
+  font-size: 16px;
+  color: #444;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lista-discos-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Nombre del disco */
+.lista-discos-item strong {
+  color: #007BFF;
+}
