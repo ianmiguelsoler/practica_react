@@ -1,7 +1,6 @@
 import './Contenedor.css';
 
-const Contenedor = ( props ) => {
-    const {children} = props;
+const Contenedor = ( {children} ) => {
   return (
     <>
     <div className="contenedor-contenedor">
