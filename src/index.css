@@ -1,52 +1,87 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  min-width: 0;
+body {
+  /* Fondo degradado estilo Star Wars */
+  background: linear-gradient(135deg, #000000, #333333, #001f3f, #0074d9);
+  background-size: 400% 400%; /* Suavizar el movimiento del gradiente */
+  animation: gradientAnimation 15s ease infinite; /* Animación del fondo */
+  color: #ffffff; /* Texto blanco para contraste */
+  font-family: 'Space Mono', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
-  padding: 6px;
-  padding-bottom: 88px; 
-  padding-top: 6px;
-  padding-right: 40px; 
-  padding-left: 40px;
-  background-color: var(--bg-default); 
-}
-
-@media (min-width: 640px) { 
-  .header {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      padding-bottom: 92px; 
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-.title {
-  flex-grow: 1;
-  min-width: 0;
+/* Encabezado principal */
+#encabezado {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 10px #ffd700, 0px 0px 30px #ffd700; /* Resplandor dorado */
+  transform: skewX(-10deg); /* Inclinación como en Star Wars */
+  color: #ffd700;
 }
 
-.title-wrapper {
-  margin-top: 8px;
+/* Contenedor principal */
+#contenedor {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between; /* Espacio entre secciones */
 }
 
-.title-text {
-  font-size: 1.875rem;
-  font-weight: 800; 
-  line-height: 1.75rem;
-  letter-spacing: -0.02em; 
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+/* Lista de películas */
+#peliculas {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las películas se distribuyan en filas */
+  justify-content: space-around;
+  padding: 20px;
+  list-style: none;
+  margin: 0;
 }
 
-@media (min-width: 768px) { 
-  .title-text {
-      font-size: 2.25rem; 
-      line-height: 2.5rem; 
-  }
+.peliculaLista {
+  background-color: #222;
+  color: #ffd700; /* Dorado como en Star Wars */
+  padding: 15px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5); /* Resplandor dorado */
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.peliculaLista:hover {
+  transform: scale(1.05); /* Aumenta el tamaño al pasar el mouse */
+  box-shadow: 0 0 20px #ffd700;
+}
+
+/* Sección de información */
+#informacion {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#tituloPelicula {
+  font-size: 2rem;
+  text-shadow: 2px 2px 10px #ffd700, 0px 0px 30px #ffd700; /* Resplandor dorado */
+  margin-bottom: 20px;
+}
+
+#datosPelicula {
+  font-size: 1.2rem;
 }

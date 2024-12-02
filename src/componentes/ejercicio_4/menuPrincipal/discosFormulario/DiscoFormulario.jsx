@@ -15,75 +15,10 @@ const DiscoFormulario = () => {
 
   const erroresIniciales = [];
 
-  const [discos, setDiscos] = useState([]); // Estado para guardar los discos
+  const [discos, setDiscos] = useState([]); 
   const [disco, setDisco] = useState(valoresIniciales);
   const [errores, setErrores] = useState(erroresIniciales);
 
-  const actualizarDato = (evento) => {
-    const { name, value } = evento.target;
-    setDisco({ ...disco, [name]: value });
-  };
-
-  const validarDato = (name, value) => {
-    let mensajeError = "";
-    switch (name) {
-      case "nombreDisco":
-        if (value.length < 5) {
-          mensajeError = "El nombre del disco debe tener al menos 5 caracteres.";
-        }
-        break;
-      case "grupoMusica":
-        if (value.length < 5) {
-          mensajeError =
-            "El grupo de música o intérprete debe tener al menos 5 caracteres.";
-        }
-        break;
-      case "anoPublicacion":
-        if (!/^\d{4}$/.test(value)) {
-          mensajeError =
-            "El año de publicación debe ser un número de 4 dígitos.";
-        }
-        break;
-      case "tipoMusica":
-        if (!value) {
-          mensajeError = "Debes seleccionar un tipo de música.";
-        }
-        break;
-      case "localizacion":
-        if (!/^ES-\d{3}[A-Z]{2}$/.test(value)) {
-          mensajeError =
-            "La localización debe tener el formato ES-001AA (3 dígitos y 2 letras mayúsculas).";
-        }
-        break;
-      default:
-        break;
-    }
-    return mensajeError;
-  };
-
-  const validarFormulario = () => {
-    let erroresListado = [];
-    for (const [name, value] of Object.entries(disco)) {
-      const error = validarDato(name, value);
-      if (error) {
-        erroresListado = [...erroresListado, { campo: name, mensaje: error }];
-      }
-    }
-    setErrores(erroresListado);
-    return erroresListado.length === 0;
-  };
-
-  const manejarEnvio = () => {
-    if (validarFormulario()) {
-      setDiscos((prevDiscos) => [...prevDiscos, disco]); // Agregar el disco al estado
-      setDisco(valoresIniciales); // Reiniciar el formulario
-      setErrores([]); // Limpiar errores
-    }
-  };
-
-  const tieneError = (campo) => {
-    return errores.some((e) => e.campo === campo);
-  };
 
   return (
     <div>

@@ -3,7 +3,7 @@ import './Contenedor.css';
 const Contenedor = ( {children} ) => {
   return (
     <>
-    <div className="contenedor-contenedor">
+    <div className="contenedor">
       {children}
     </div>
     </>
