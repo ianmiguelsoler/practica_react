@@ -1,59 +1,74 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./ListaStarWarsApi.css";
+import TitulosPeliculas from "./TitulosPeliculas/TitulosPeliculas.jsx";
+import DatosPelicula from "./DatosPeliculas/DatosPeliculas.jsx";
+import { obtenerDatosApiStarWars } from "../../../../../biblioteca/biblioteca.js";
 
-const ListaStarWarsApi = ({ discos }) => {
-// Estado inicial y validaciones
+const ListaStarWarsApi = () => {
+  const fichero = "https://swapi.dev/api/films";
+  const valoresIniciales = [];
+  const erroresIniciales = null;
 
-const fichero = "https://swapi.dev/api/films";
-const valoresIniciales = [];
+  const [listaPelis, setListaPelis] = useState(valoresIniciales);
+  const [errores, setErrores] = useState(erroresIniciales);
+  const [peliculaSeleccionada, setPeliculaSeleccionada] = useState(null);
 
-const erroresIniciales = [];
-
-const [listaPelis, setListaPelis] = useState(valoresIniciales);
-const [errores, setErrores] = useState(erroresIniciales);
-
-const obtenerPelicualasStarWars = (url) => {
-  return fetch(url)
-      .then((respuesta) => {
-          if (!respuesta.ok) {
-              throw new Error(`Error al obtener datos: ${respuesta.status} ${respuesta.statusText}`);
-          }
-          return respuesta.json(); // Convertir la respuesta a JSON.
-      })
-      .catch((error) => {
-          console.error(`Error en obtenerDatosStarWars: ${error.message}`);
-          return []; // Retorna un array vacío en caso de error.
-      });
-};
-
-useEffect(()=>{
-
-}, []);
-
-const cargarDatosIniciales = () => {
-  obtenerPelicualasStarWars(fichero)
+  const cargarDatosIniciales = () => {
+    obtenerDatosApiStarWars(fichero)
       .then((datos) => {
-          return datos.results
-      }).then((datos) =>{
-          setListaPelis(datos);
-          console.log(datos);
+        setListaPelis(datos);
       })
       .catch((error) => {
-          console.error(`Error en cargarDatos: ${error.message}`);
+        console.error(`Error en cargarDatosIniciales: ${error.message}`);
+        setErrores(`No se pudieron cargar los datos: ${error.message}`);
       });
-};
+  };
 
-return (
-  <div>
-    
+  const manejarClickPelicula = (idPelicula) => {
+    const url = `https://swapi.dev/api/films/${idPelicula}/`;
+    fetch(url)
+      .then((respuesta) => {
+        if (!respuesta.ok) {
+          throw new Error(
+            `Error al obtener los datos de la película: ${respuesta.status} ${respuesta.statusText}`
+          );
+        }
+        return respuesta.json();
+      })
+      .then((pelicula) => {
+        setPeliculaSeleccionada(pelicula);
+      })
+      .catch((error) => {
+        console.error(`Error al obtener la película: ${error.message}`);
+      });
+  };
 
-    {/* Mostrar el componente Errores */}
-    <Errores errores={errores} />
+  useEffect(() => {
+    cargarDatosIniciales();
+  }, []);
 
-    {/* Mostrar la lista de discos */}
-    <ListaDiscos discos={discos} />
-  </div>
-);
+  return (
+    <div id="contenedor">
+      <h1 id="encabezado">Películas de Star Wars</h1>
+      {errores ? (
+        <p className="error">{errores}</p>
+      ) : (
+        <div id="contenido">
+          <div id="peliculas">
+            <TitulosPeliculas
+              peliculas={listaPelis}
+              manejarClickPelicula={manejarClickPelicula}
+            />
+          </div>
+          <div id="informacion">
+            {peliculaSeleccionada && (
+              <DatosPelicula pelicula={peliculaSeleccionada} />
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default ListaStarWarsApi;

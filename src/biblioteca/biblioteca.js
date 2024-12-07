@@ -63,6 +63,54 @@ const formatearTiempo = (tiempo) => {
       .padStart(2, "0")}`;
   };
 
+  //Obtener Datos api de Star Wars
+  const obtenerDatosApiStarWars = (url) => {
+    return fetch(url)
+      .then((respuesta) => {
+        if (!respuesta.ok) {
+          throw new Error(
+            `Error al obtener datos: ${respuesta.status} ${respuesta.statusText}`
+          );
+        }
+        return respuesta.json();
+      })
+      .then((datos) => datos.results)
+      .catch((error) => {
+        console.error(`Error en obtenerDatosApiStarWars: ${error.message}`);
+        throw error;
+      });
+  };
+  //Funcion que busca por id en la api para obtener la información de la película
+  const obtenerPeliculaPorId = (url) => {
+    return fetch(url)
+      .then((respuesta) => {
+        if (!respuesta.ok) {
+          throw new Error(
+            `Error al obtener los datos de la película: ${respuesta.status} ${respuesta.statusText}`
+          );
+        }
+        return respuesta.json();
+      })
+      .catch((error) => {
+        console.error(`Error en obtenerPeliculaPorId: ${error.message}`);
+        throw error;
+      });
+  };
+  //Función que convierte la fecha inglesa a la europea
+  const convertirFechaAEuropea = (fecha) => {
+    if (!fecha) {
+      console.error("La fecha proporcionada no es válida.");
+      return "";
+    }
+    try {
+      const nuevaFecha = new Date(fecha);
+      return nuevaFecha.toLocaleDateString("es-ES");
+    } catch (error) {
+      console.error("Error al convertir la fecha:", error.message);
+      return "";
+    }
+  };
+
 
 export { 
     obtenerNumeroAleatorio,
@@ -72,5 +120,8 @@ export {
     unirArray, 
     obtenerNumeroAleatorioSinRepetir,
     generarColorAleatorio,
-    formatearTiempo
+    formatearTiempo,
+    obtenerDatosApiStarWars,
+    convertirFechaAEuropea,
+    obtenerPeliculaPorId
 };
