@@ -7,7 +7,7 @@
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
   position: relative;
   overflow: hidden;
-  max-width: 100%;
+  max-width: 80%;
   margin: 20px auto;
   animation: fadeIn 1s ease-in-out;
 }

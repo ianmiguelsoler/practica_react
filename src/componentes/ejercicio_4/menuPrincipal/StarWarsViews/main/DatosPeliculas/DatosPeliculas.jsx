@@ -9,9 +9,14 @@ const DatosPelicula = ({ pelicula }) => {
   const [actorSeleccionado, setActorSeleccionado] = useState(null);
 
   useEffect(() => {
+    // Reiniciar el actor seleccionado cuando cambie la película
+    setActorSeleccionado(null);
+
     const obtenerActores = async () => {
       try {
-        const promesas = pelicula.characters.slice(0, 10).map((url) => fetch(url).then((res) => res.json()));
+        const promesas = pelicula.characters.slice(0, 10).map((url) =>
+          fetch(url).then((res) => res.json())
+        );
         const actoresResueltos = await Promise.all(promesas);
         setActores(actoresResueltos);
       } catch (error) {
@@ -19,7 +24,7 @@ const DatosPelicula = ({ pelicula }) => {
       }
     };
     obtenerActores();
-  }, [pelicula]);
+  }, [pelicula]); // Ejecutar cuando cambie la película
 
   const manejarClickActor = (actor) => {
     setActorSeleccionado(actor);
@@ -28,7 +33,11 @@ const DatosPelicula = ({ pelicula }) => {
   return (
     <div className="datos-pelicula">
       <div className="encabezado">
-        <img src="src\biblioteca\videos\naveImperial.png" alt="Nave Imperial" className="nave-imperial" />
+        <img
+          src="src/biblioteca/videos/naveImperial.png"
+          alt="Nave Imperial"
+          className="nave-imperial"
+        />
         <h2 className="titulo-pelicula">{pelicula.title}</h2>
       </div>
       <div className="contenido">
@@ -39,19 +48,23 @@ const DatosPelicula = ({ pelicula }) => {
           <strong>🎬 Productor:</strong> {pelicula.producer}
         </p>
         <p>
-          <strong>📅 Fecha de lanzamiento:</strong> {convertirFechaAEuropea(
-            pelicula.release_date
-          )}
+          <strong>📅 Fecha de lanzamiento:</strong>{" "}
+          {convertirFechaAEuropea(pelicula.release_date)}
         </p>
         <p className="sinopsis">
           <strong>📜 Sinopsis:</strong> {pelicula.opening_crawl}
         </p>
         <div>
           <h3>Protagonistas:</h3>
-          <DetallesActores actores={actores} manejarClickActor={manejarClickActor} />
+          <div className="actor-container">
+            <DetallesActores
+              actores={actores}
+              manejarClickActor={manejarClickActor}
+            />
+            {actorSeleccionado && <DetalleActor actor={actorSeleccionado} />}
+          </div>
         </div>
       </div>
-      {actorSeleccionado && <DetalleActor actor={actorSeleccionado} />}
     </div>
   );
 };
