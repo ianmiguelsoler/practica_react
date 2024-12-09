@@ -4,19 +4,24 @@ const TitulosPeliculas = ({ peliculas, manejarClickPelicula }) => {
 
   // Utilizamos ManejarClickDelegado para delegar el evento click a cada título.
   const manejarClickDelegado = (event) => {
-    const elementoClickeado = event.target.closest("li");
-    
-    if (elementoClickeado) {
-      //Le damos los poderes del array a todos los elementos que sean "li" y lo filtramos con indexOf para sacar la posición.
+    let elementoClickeado = event.target;
+
+    // Subir al <li> si se hace clic en un hijo como <span>.
+    while (elementoClickeado && elementoClickeado.tagName !== "LI") {
+      elementoClickeado = elementoClickeado.parentNode;
+    }
+
+    // Si encontramos un <li>, obtenemos su índice.
+    if (elementoClickeado && elementoClickeado.tagName === "LI") {
       const index = Array.from(elementoClickeado.parentNode.children).indexOf(elementoClickeado);
-      manejarClickPelicula(index + 1); // index + 1 para alinearse con los IDs de las películas
+      manejarClickPelicula(index+1); // Llamar al manejador con el índice correspondiente.
     }
   };
 
   return (
-    <div onClick={manejarClickDelegado}>
+    <div>
       <h2>Películas de Star Wars</h2>
-      <ul>
+      <ul  onClick={manejarClickDelegado}>
         {peliculas.length && Array.isArray(peliculas) ? (
           peliculas.map((peli, index) => (
             <TituloPelicula
