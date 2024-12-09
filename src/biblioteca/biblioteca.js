@@ -30,21 +30,7 @@ const obtenerNumeroAleatorioSinRepetir = (arrayDeObjetos) => {
     return { numero: nuevoNumero };
 };
 
-
-
-// Función para formatear el tiempo.
-const formatearTiempo = (tiempo) => {
-    const milisegundos = tiempo % 1000;
-    const segundos = Math.floor((tiempo / 1000) % 60);
-    const minutos = Math.floor(tiempo / 60000);
-    return `${minutos.toString().padStart(2, "0")}:${segundos
-      .toString()
-      .padStart(2, "0")}:${Math.floor(milisegundos / 10)
-      .toString()
-      .padStart(2, "0")}`;
-  };
-
-  //Obtener Datos api de Star Wars
+  //Obtener Datos api de Star Wars.
   const obtenerDatosApiStarWars = (url) => {
     return fetch(url)
       .then((respuesta) => {
@@ -61,7 +47,7 @@ const formatearTiempo = (tiempo) => {
         throw error;
       });
   };
-  //Funcion que busca por id en la api para obtener la información de la película
+  //Funcion que busca por id en la api para obtener la información de la película.
   const obtenerPeliculaPorId = (url) => {
     return fetch(url)
       .then((respuesta) => {
@@ -77,7 +63,7 @@ const formatearTiempo = (tiempo) => {
         throw error;
       });
   };
-  //Función que convierte la fecha inglesa a la europea
+  //Función que convierte la fecha inglesa a la europea.
   const convertirFechaAEuropea = (fecha) => {
     if (!fecha) {
       console.error("La fecha proporcionada no es válida.");
@@ -97,7 +83,6 @@ export {
     generarUuidAleatorio,
     unirArray, 
     obtenerNumeroAleatorioSinRepetir,
-    formatearTiempo,
     obtenerDatosApiStarWars,
     convertirFechaAEuropea,
     obtenerPeliculaPorId

@@ -5,14 +5,18 @@ import DatosPelicula from "./DatosPeliculas/DatosPeliculas.jsx";
 import { obtenerDatosApiStarWars } from "../../../../../biblioteca/biblioteca.js";
 
 const ListaStarWarsApi = () => {
+
+  //Iniciamos las variables por defecto del programa.
   const fichero = "https://swapi.dev/api/films";
   const valoresIniciales = [];
   const erroresIniciales = null;
 
+  //listamos los 3 useState que vamos a utilizar
   const [listaPelis, setListaPelis] = useState(valoresIniciales);
   const [errores, setErrores] = useState(erroresIniciales);
   const [peliculaSeleccionada, setPeliculaSeleccionada] = useState(null);
 
+//Hacemos una solicitud a la biblioteca de obtenerDatosApi y controlamos posibles errores.
   const cargarDatosIniciales = () => {
     obtenerDatosApiStarWars(fichero)
       .then((datos) => {
@@ -23,7 +27,7 @@ const ListaStarWarsApi = () => {
         setErrores(`No se pudieron cargar los datos: ${error.message}`);
       });
   };
-
+  //Creamos una función que nos ayude a manejar la petición a la api a través del id, delegamos esto y modificamos setPeliculasSeleccionada
   const manejarClickPelicula = (idPelicula) => {
     const url = `https://swapi.dev/api/films/${idPelicula}/`;
     fetch(url)
@@ -42,7 +46,7 @@ const ListaStarWarsApi = () => {
         console.error(`Error al obtener la película: ${error.message}`);
       });
   };
-
+// Función que carga datos iniciales de los títulos de las películas.
   useEffect(() => {
     cargarDatosIniciales();
   }, []);
