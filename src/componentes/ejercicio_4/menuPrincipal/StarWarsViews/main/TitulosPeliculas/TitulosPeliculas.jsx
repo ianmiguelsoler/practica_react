@@ -1,24 +1,35 @@
 import TituloPelicula from "./TituloPelicula/TituloPelicula.jsx";
-import { generarUuidAleatorio } from "../../../../../../biblioteca/biblioteca.js";
 
 const TitulosPeliculas = ({ peliculas, manejarClickPelicula }) => {
+
+  // Utilizamos ManejarClickDelegado para delegar el evento click a cada título.
+  const manejarClickDelegado = (event) => {
+    const elementoClickeado = event.target.closest("li");
+    
+    if (elementoClickeado) {
+      //Le damos los poderes del array a todos los elementos que sean "li" y lo filtramos con indexOf para sacar la posición.
+      const index = Array.from(elementoClickeado.parentNode.children).indexOf(elementoClickeado);
+      manejarClickPelicula(index + 1); // index + 1 para alinearse con los IDs de las películas
+    }
+  };
+
   return (
-    <>
-    <div>
+    <div onClick={manejarClickDelegado}>
       <h2>Películas de Star Wars</h2>
-      {peliculas.length && Array.isArray(peliculas) ? (
-        peliculas.map((peli, index) => (
-          <TituloPelicula
-            key={generarUuidAleatorio()}
-            pelicula={peli}
-            manejarClickPelicula={() => manejarClickPelicula(index + 1)}
-          />
-        ))
-      ) : (
-        `No se encontraron películas en la base de datos.`
-      )}
+      <ul>
+        {peliculas.length && Array.isArray(peliculas) ? (
+          peliculas.map((peli, index) => (
+            <TituloPelicula
+              key={peli.episode_id}
+              pelicula={peli}
+              index={index}
+            />
+          ))
+        ) : (
+          <li>No se encontraron películas en la base de datos.</li>
+        )}
+      </ul>
     </div>
-    </>
   );
 };
 

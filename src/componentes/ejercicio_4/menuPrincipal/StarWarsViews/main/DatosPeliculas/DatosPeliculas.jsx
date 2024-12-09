@@ -1,11 +1,8 @@
 import React from "react";
 import "./DatosPeliculas.css";
+import {convertirFechaAEuropea} from "../../../../../../biblioteca/biblioteca.js"
 
 const DatosPelicula = ({ pelicula }) => {
-  const convertirFechaAEuropea = (fecha) => {
-    const nuevaFecha = new Date(fecha);
-    return nuevaFecha.toLocaleDateString("es-ES");
-  };
 
   return (
     <div className="datos-pelicula">
