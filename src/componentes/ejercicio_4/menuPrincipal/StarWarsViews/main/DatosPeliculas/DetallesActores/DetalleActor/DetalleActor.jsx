@@ -1,6 +1,7 @@
 import React from "react";
 
 const DetalleActor = ({ actor }) => {
+  console.log(actor)
   return (
     <div className="detalle-actor">
       <h3>Detalle del Actor</h3>
@@ -10,9 +11,6 @@ const DetalleActor = ({ actor }) => {
       <p><strong>Peso:</strong> {actor.mass} kg</p>
       <p><strong>Color de pelo:</strong> {actor.hair_color}</p>
       <p><strong>Color de ojos:</strong> {actor.eye_color}</p>
-      {actor.image && (
-        <img src={actor.image} alt={`Imagen de ${actor.name}`} />
-      )}
     </div>
   );
 };

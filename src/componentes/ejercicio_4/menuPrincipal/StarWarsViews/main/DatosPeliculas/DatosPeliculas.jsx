@@ -9,7 +9,7 @@ const DatosPelicula = ({ pelicula }) => {
   const [actorSeleccionado, setActorSeleccionado] = useState(null);
 
   useEffect(() => {
-    // Reiniciar el actor seleccionado cuando cambie la película
+    // Reiniciar el actor seleccionado cuando cambie la película.
     setActorSeleccionado(null);
 
     const obtenerActores = async () => {
@@ -24,7 +24,7 @@ const DatosPelicula = ({ pelicula }) => {
       }
     };
     obtenerActores();
-  }, [pelicula]); // Ejecutar cuando cambie la película
+  }, [pelicula]); // Ejecutar cuando cambie la película.
 
   const manejarClickActor = (actor) => {
     setActorSeleccionado(actor);
