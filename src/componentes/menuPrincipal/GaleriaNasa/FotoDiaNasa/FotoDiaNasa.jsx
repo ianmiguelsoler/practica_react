@@ -6,16 +6,21 @@ import "./FotoDiaNasa.css";
 const FotoDiaNasa = ({ onSeleccionarFecha }) => {
   //Estados para manejar los errores y para tener la foto.
   const [foto, setFoto] = useState(null);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
 
   const manejarFechaSeleccionada = async (fecha) => {
-    setError(null); // Limpia el error al presionar buscar.
+    setError(""); // Limpia el error al presionar buscar.
+    console.log("FUERA",error)
     try {
       const resultado = await obtenerFotoDia(fecha);
       setFoto(resultado);
       onSeleccionarFecha(resultado);
+      setError("");
+      console.log("Dentro try",error)
     } catch (err) {
+      console.log("Error",error)
       setError("Error al obtener la foto del día.");
+
     }
   };
 
@@ -23,7 +28,7 @@ const FotoDiaNasa = ({ onSeleccionarFecha }) => {
     <div className="foto-dia-nasa">
       <h2 className="foto-dia-titulo">Foto del Día</h2>
       <BotonFecha onSeleccionar={manejarFechaSeleccionada} />
-      {error && <p className="foto-dia-error">{error}</p>}
+      {error ? <p className="foto-dia-error">{error} </p>: ""}
       {foto && (
         <div className="foto-dia-contenido">
           <h3 className="foto-dia-subtitulo">{foto.title}</h3>
