@@ -4,6 +4,7 @@ import GaleriaNasa from "../GaleriaNasa/GaleriaNasa.jsx";
 import "./SeleccionaPrincipal.css"
 
 const SeleccionNasa = () => {
+  //Estado Que cambia mediante un string el estado para saber cual es el que está activo.
   const [componenteActivo, setComponenteActivo] = useState("FotoDiaNasa");
 
   // Cambiar el componente activo según la selección.
@@ -30,7 +31,7 @@ const SeleccionNasa = () => {
         </button>
       </div>
 
-      {/* Activa el componente seleccionado */}
+      {/* Activa el componente seleccionado  comparando con un string*/}
       {componenteActivo === "FotoDiaNasa" && <FotoDiaNasa />}
       {componenteActivo === "GaleriaNasa" && <GaleriaNasa />}
     </div>
