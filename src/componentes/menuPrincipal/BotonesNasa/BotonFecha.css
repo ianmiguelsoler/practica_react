@@ -1,0 +1,29 @@
+.boton-fecha-form {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .boton-fecha-input {
+    padding: 10px;
+    font-size: 16px;
+    width: auto;
+  }
+  
+  .boton-fecha-boton {
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0078d7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .boton-fecha-boton:hover {
+    background-color: #005bb5;
+  }
+  

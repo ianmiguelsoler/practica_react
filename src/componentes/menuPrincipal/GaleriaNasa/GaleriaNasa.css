@@ -13,6 +13,7 @@
   }
   
   .galeria-item {
+    position: relative; /* Importante para posicionar el título sobre la imagen */
     border: 1px solid #ccc;
     border-radius: 10px;
     overflow: hidden;
@@ -23,9 +24,26 @@
     width: 100%;
     height: 200px;
     object-fit: cover;
+    cursor: pointer;
   }
   
   .galeria-item p {
-    padding: 10px;
+    position: absolute; /* Posiciona el texto sobre la imagen */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el texto */
+    font-family: Arial, sans-serif; /* Tipo de letra Arial */
+    font-size: 18px; /* Tamaño de letra */
+    color: white; /* Color blanco */
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente para mejorar visibilidad */
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0; /* Ocultamos el título inicialmente */
+    transition: opacity 0.3s ease-in-out; /* Transición suave */
+  }
+  
+  .galeria-item:hover p {
+    opacity: 1; /* Muestra el título cuando el ratón pasa por encima */
   }
   

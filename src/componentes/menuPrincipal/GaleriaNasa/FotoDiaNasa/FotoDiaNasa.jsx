@@ -1,36 +1,37 @@
 import React, { useState } from "react";
 import { obtenerFotoDia } from "../../../../biblioteca/biblioteca.js";
 import BotonFecha from "../../BotonesNasa/BotonFecha.jsx";
+import "./FotoDiaNasa.css"; // Importar los estilos
 
 const FotoDiaNasa = ({ onSeleccionarFecha }) => {
   const [foto, setFoto] = useState(null);
   const [error, setError] = useState(null);
 
   const manejarFechaSeleccionada = async (fecha) => {
+    setError(null); // Limpia el error al presionar buscar
     try {
       const resultado = await obtenerFotoDia(fecha);
       setFoto(resultado);
       onSeleccionarFecha(resultado);
-      setError(null);
     } catch (err) {
       setError("Error al obtener la foto del día.");
     }
   };
 
   return (
-    <div style={{ margin: "20px" }}>
-      <h2>Foto del Día</h2>
+    <div className="foto-dia-nasa">
+      <h2 className="foto-dia-titulo">Foto del Día</h2>
       <BotonFecha onSeleccionar={manejarFechaSeleccionada} />
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p className="foto-dia-error">{error}</p>}
       {foto && (
-        <div>
-          <h3>{foto.title}</h3>
+        <div className="foto-dia-contenido">
+          <h3 className="foto-dia-subtitulo">{foto.title}</h3>
           <img
+            className="foto-dia-imagen"
             src={foto.url}
             alt={foto.title}
-            style={{ maxWidth: "100%", borderRadius: "10px" }}
           />
-          <p>{foto.explanation}</p>
+          <p className="foto-dia-explicacion">{foto.explanation}</p>
         </div>
       )}
     </div>

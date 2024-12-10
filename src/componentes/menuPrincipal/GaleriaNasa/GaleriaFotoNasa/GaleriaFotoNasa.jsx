@@ -1,5 +1,5 @@
 import React from "react";
-import "../GaleriaNasa.css"; 
+import "../GaleriaNasa.css";
 
 const GaleriaFotoNasa = ({ imagenes }) => {
   return (

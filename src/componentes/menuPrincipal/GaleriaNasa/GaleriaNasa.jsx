@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { buscarGaleria } from "../../../biblioteca/biblioteca.js";
 import "./GaleriaNasa.css";
 import GaleriaFotoNasa from "./GaleriaFotoNasa/GaleriaFotoNasa.jsx";
+
+
 const GaleriaNasa = () => {
   const [imagenes, setImagenes] = useState([]);
   const [loading, setLoading] = useState(true);

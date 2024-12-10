@@ -1,0 +1,48 @@
+.foto-dia-nasa {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  .foto-dia-titulo {
+    font-size: 24px;
+    color: #0078d7;
+    margin-bottom: 20px;
+  }
+  
+  .foto-dia-error {
+    color: red;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .foto-dia-contenido {
+    margin-top: 20px;
+  }
+  
+  .foto-dia-subtitulo {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .foto-dia-imagen {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+  }
+  
+  .foto-dia-explicacion {
+    font-size: 26px;
+    color: #ffffff;
+    line-height: 1.6;
+    text-align: justify;
+    padding: 20px;
+    background-color: black;
+    border: 3px yellow solid;
+    border-radius: 20px;
+    margin: 0 10%;
+  }
+  

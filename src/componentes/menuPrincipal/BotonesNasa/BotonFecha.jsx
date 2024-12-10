@@ -1,39 +1,32 @@
 import React, { useState } from "react";
+import "./BotonFecha.css";
 
+/* Componente que permite seleccionar una fecha y enviarla al padre */
 const BotonFecha = ({ onSeleccionar }) => {
-  const [fecha, setFecha] = useState("");
+  const [fecha, setFecha] = useState(""); // Estado para almacenar la fecha seleccionada.
 
+   /* Actualiza el estado con la fecha seleccionada */
   const manejarCambio = (e) => {
     setFecha(e.target.value);
   };
 
+  /* Llama a la función onSeleccionar con la fecha si está definida */
   const manejarEnvio = (e) => {
-    e.preventDefault();
+    e.preventDefault(); //Para que no se actualice al darle submit en el botón.
     if (fecha) {
       onSeleccionar(fecha);
     }
   };
 
   return (
-    <form onSubmit={manejarEnvio} style={{ margin: "20px" }}>
+    <form onSubmit={manejarEnvio} className="boton-fecha-form">
       <input
         type="date"
         value={fecha}
         onChange={manejarCambio}
-        style={{ padding: "10px", fontSize: "16px" }}
+        className="boton-fecha-input"
       />
-      <button
-        type="submit"
-        style={{
-          marginLeft: "10px",
-          padding: "10px 20px",
-          fontSize: "16px",
-          backgroundColor: "#0078d7",
-          color: "#fff",
-          border: "none",
-          cursor: "pointer",
-        }}
-      >
+      <button type="submit" className="boton-fecha-boton">
         Ver Foto
       </button>
     </form>

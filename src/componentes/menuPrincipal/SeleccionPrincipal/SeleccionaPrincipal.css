@@ -1,0 +1,17 @@
+.boton-nasa {
+    padding: 20px 30px;
+    margin-right: 10px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .boton-nasa.activo {
+    background-color: #0078d7;
+  }
+  
+  .boton-nasa.inactivo {
+    background-color: #ccc;
+  }
+  
