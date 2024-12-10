@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./NasaAppPlanetas.css";
-import { obtenerDatosApiStarWars, obtenerPeliculaPorId } from "../../../../biblioteca/biblioteca.js";
+import { obtenerDatosApiStarWars, obtenerPeliculaPorId } from "../../../biblioteca/biblioteca.js";
 
 const API_KEY = "e4BUX9LPqSd7Mk4bqdtCBqT0cRv1XLHdoC0qSCOD"; // Reemplaza con tu API key
 const NASA_API_URL = "https://images-api.nasa.gov/search";

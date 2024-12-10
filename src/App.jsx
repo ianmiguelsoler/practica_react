@@ -1,18 +1,20 @@
-import './App.css';
-import React from "react";
-import Contenedor from './componentes/ejercicio_4/app/contenedor/Contenedor.jsx';
-import NasaApp from './componentes/ejercicio_4/menuPrincipal/NasaApp/NasaApp.jsx';
-import NasaAppPlanetas from './componentes/ejercicio_4/menuPrincipal/NasaAppPlanetas/NasaAppPlanetas.jsx';
+import React, { useState } from "react";
+import GaleriaNasa from "./componentes/menuPrincipal/GaleriaNasa/GaleriaNasa.jsx";
+import FotoDiaNasa from "./componentes/menuPrincipal/GaleriaNasa/FotoDiaNasa/FotoDiaNasa.jsx";
+
 const App = () => {
+  const [fotoSeleccionada, setFotoSeleccionada] = useState(null);
+
+  const manejarSeleccionFecha = (foto) => {
+    setFotoSeleccionada(foto);
+  };
 
   return (
-    <>
-      <Contenedor>
-          {/* <DiscoFormulario/> */}
-          {/* <NasaApp /> */}
-          <NasaAppPlanetas />
-      </Contenedor>
-    </>
+    <div style={{ fontFamily: "Arial, sans-serif", textAlign: "center" }}>
+      <h1>Galería de la NASA</h1>
+      <FotoDiaNasa onSeleccionarFecha={manejarSeleccionFecha} />
+      <GaleriaNasa />
+    </div>
   );
 };
 

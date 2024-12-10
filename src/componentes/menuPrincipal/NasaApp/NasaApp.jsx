@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./NasaApp.css";
-import { obtenerDatosApiStarWars, obtenerPeliculaPorId } from "../../../../biblioteca/biblioteca.js";
+import { obtenerDatosApiStarWars, obtenerPeliculaPorId } from "../../../biblioteca/biblioteca.js";
 
 const NasaApp = () => {
   const [data, setData] = useState(null);

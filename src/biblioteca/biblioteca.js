@@ -5,39 +5,19 @@ const generarUuidAleatorio = () => {
     return crypto.randomUUID();
   };
 
-"use strict";
+const API_KEY = "e4BUX9LPqSd7Mk4bqdtCBqT0cRv1XLHdoC0qSCOD"; //Clave de acceso a la api de la nasa
 
-// Obtener datos de la API de Star Wars con async/await
-const obtenerDatosApiStarWars = async (url) => {
-  try {
-    const respuesta = await fetch(url);
-    if (!respuesta.ok) {
-      throw new Error(
-        `Error al obtener datos: ${respuesta.status} ${respuesta.statusText}`
-      );
-    }
-    const datos = await respuesta.json();
-    return datos.results;
-  } catch (error) {
-    console.error(`Error en obtenerDatosApiStarWars: ${error.message}`);
-    throw error;
-  }
+const obtenerFotoDia = async (fecha) => {
+  const url = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}&date=${fecha}`;
+  const respuesta = await fetch(url);
+  return await respuesta.json();
 };
 
-// Obtener información de una película por ID con async/await
-const obtenerPeliculaPorId = async (url) => {
-  try {
-    const respuesta = await fetch(url);
-    if (!respuesta.ok) {
-      throw new Error(
-        `Error al obtener los datos de la película: ${respuesta.status} ${respuesta.statusText}`
-      );
-    }
-    return await respuesta.json();
-  } catch (error) {
-    console.error(`Error en obtenerPeliculaPorId: ${error.message}`);
-    throw error;
-  }
+const buscarGaleria = async (busqueda) => {
+  const url = `https://images-api.nasa.gov/search?q=${busqueda}&media_type=image`;
+  const respuesta = await fetch(url);
+  const datos = await respuesta.json();
+  return datos.collection.items;
 };
 
 // Convertir fecha a formato europeo
@@ -57,7 +37,7 @@ const convertirFechaAEuropea = (fecha) => {
 
 export {
   generarUuidAleatorio,
-  obtenerDatosApiStarWars,
-  obtenerPeliculaPorId,
+  obtenerFotoDia,
+  buscarGaleria,
   convertirFechaAEuropea,
 };
