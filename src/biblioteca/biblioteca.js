@@ -14,7 +14,7 @@ const obtenerFotoDia = async (fecha) => {
   return await respuesta.json();
 };
 
-//Solicita a la api la imagen
+//Solicita a la api la imagen y utiliza .collection.items para acceder a los datos y es especifico de esta api.
 const buscarGaleria = async (busqueda) => {
   const url = `https://images-api.nasa.gov/search?q=${busqueda}&media_type=image`;
   const respuesta = await fetch(url);
