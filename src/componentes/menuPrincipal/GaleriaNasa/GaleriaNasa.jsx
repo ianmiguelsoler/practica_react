@@ -5,9 +5,11 @@ import GaleriaFotoNasa from "./GaleriaFotoNasa/GaleriaFotoNasa.jsx";
 
 
 const GaleriaNasa = () => {
+  //Dos estados para manejar las imagenes y la carga.
   const [imagenes, setImagenes] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  //Cargamos la galería llamando a la función de la api que busca planetas y le pasamos lo que queremos buscar como parametro.
   useEffect(() => {
     const cargarGaleria = async () => {
       try {

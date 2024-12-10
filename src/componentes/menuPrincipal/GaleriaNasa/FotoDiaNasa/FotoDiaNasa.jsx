@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { obtenerFotoDia } from "../../../../biblioteca/biblioteca.js";
 import BotonFecha from "../../BotonesNasa/BotonFecha.jsx";
-import "./FotoDiaNasa.css"; // Importar los estilos
+import "./FotoDiaNasa.css";
 
 const FotoDiaNasa = ({ onSeleccionarFecha }) => {
+  //Estados para manejar los errores y para tener la foto.
   const [foto, setFoto] = useState(null);
   const [error, setError] = useState(null);
 
   const manejarFechaSeleccionada = async (fecha) => {
-    setError(null); // Limpia el error al presionar buscar
+    setError(null); // Limpia el error al presionar buscar.
     try {
       const resultado = await obtenerFotoDia(fecha);
       setFoto(resultado);

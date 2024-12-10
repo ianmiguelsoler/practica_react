@@ -9,9 +9,13 @@
   
   .boton-nasa.activo {
     background-color: #0078d7;
+    font-size: 20px;
+    font-weight: bolder;
   }
   
   .boton-nasa.inactivo {
     background-color: #ccc;
+    font-size: 20px;
+    font-weight: bolder;
   }
   

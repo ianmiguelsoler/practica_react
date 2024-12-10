@@ -14,7 +14,8 @@
   .boton-fecha-boton {
     margin-left: 10px;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 26px;
+    font-weight: bolder;
     background-color: #0078d7;
     color: white;
     border: none;
