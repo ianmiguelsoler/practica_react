@@ -1,16 +1,19 @@
 import React, { createContext, useState, useEffect } from "react";
 import {
-  obtenerDatosApiStarWars,
-  obtenerPeliculaPorId,
-} from "../../../../../biblioteca/biblioteca.js";
+  fetchConFinally,
+  fetchMultiplesRecursos,
+} from "../../../../../biblioteca/promesaApiStarWars.js";
 
+// Crear contexto.
 const contextoPeliculas = createContext();
 
 const ProveedorPlanetas = ({ children }) => {
+  // Constantes iniciales.
   const fichero = "https://swapi.py4e.com/api/films";
   const valoresIniciales = [];
   const erroresIniciales = null;
 
+  // Estados.
   const [listaPelis, setListaPelis] = useState(valoresIniciales);
   const [errores, setErrores] = useState(erroresIniciales);
   const [peliculaSeleccionada, setPeliculaSeleccionada] = useState(null);
@@ -19,62 +22,69 @@ const ProveedorPlanetas = ({ children }) => {
   const [starships, setStarships] = useState([]);
   const [vehicles, setVehicles] = useState([]);
 
-  // Función para cargar datos iniciales con async/await.
+  // Función para cargar datos iniciales.
   const cargarDatosIniciales = async () => {
     try {
-      const datos = await obtenerDatosApiStarWars(fichero);
-      setListaPelis(datos);
+      const datos = await fetchConFinally(fichero);
+      if (datos && datos.results) {
+        setListaPelis(datos.results);
+      } else {
+        throw new Error("Formato de datos inválido al cargar las películas.");
+      }
     } catch (error) {
       console.error(`Error en cargarDatosIniciales: ${error.message}`);
       setErrores(`No se pudieron cargar los datos: ${error.message}`);
     }
   };
 
-  // Función para manejar el clic en una película con async/await.
+  // Función para manejar el clic en una película.
   const manejarClickPelicula = async (idPelicula) => {
     const url = `https://swapi.py4e.com/api/films/${idPelicula}/`;
     try {
-      const pelicula = await obtenerPeliculaPorId(url);
+      const pelicula = await fetchConFinally(url);
       setPeliculaSeleccionada(pelicula);
-      setActorSeleccionado(null); // Reiniciar actor seleccionado
-      cargarActores(pelicula.characters); // Cargar actores de la película
+      setActorSeleccionado(null);
+      if (pelicula.characters) {
+        cargarActores(pelicula.characters);
+      }
     } catch (error) {
       console.error(`Error al obtener la película: ${error.message}`);
     }
   };
 
-  // Función para cargar los actores de una película
+  // Función para cargar los actores de una película.
   const cargarActores = async (urlsActores) => {
     try {
-      const promesas = urlsActores.slice(0, 10).map((url) =>
-        fetch(url).then((res) => res.json())
+      const actoresResueltos = await fetchMultiplesRecursos(
+        urlsActores.slice(0, 10)
       );
-      const actoresResueltos = await Promise.all(promesas);
-      setActores(actoresResueltos);
+      setActores(actoresResueltos.filter((actor) => actor !== null));
     } catch (error) {
       console.error(`Error al cargar los actores: ${error.message}`);
     }
   };
 
-  // Función para cargar vehículos y naves de un actor
+  // Función para cargar vehículos y naves de un actor.
   const cargarVehiculosYNaves = async (actor) => {
     try {
-      const promesasStarships = actor.starships.map((url) => fetch(url).then((res) => res.json()));
-      const naves = await Promise.all(promesasStarships);
-      setStarships(naves);
-  
-      const promesasVehicles = actor.vehicles.map((url) => fetch(url).then((res) => res.json()));
-      const vehiculos = await Promise.all(promesasVehicles);
-      setVehicles(vehiculos);
+      const [naves, vehiculos] = await Promise.all([
+        fetchMultiplesRecursos(actor.starships),
+        fetchMultiplesRecursos(actor.vehicles),
+      ]);
+
+      setStarships(naves.filter((nave) => nave !== null));
+      setVehicles(vehiculos.filter((vehiculo) => vehiculo !== null));
     } catch (error) {
       console.error("Error al cargar vehículos y naves:", error);
     }
   };
 
-  // Función para manejar el clic en un actor
+  // Función para manejar el clic en un actor.
   const manejarClickActor = (actor) => {
     setActorSeleccionado(actor);
-    cargarVehiculosYNaves(actor); // Cargar vehículos y naves del actor
+    if (actor.starships || actor.vehicles) {
+      cargarVehiculosYNaves(actor);
+    }
   };
 
   // Carga inicial de datos al montar el componente.
@@ -82,6 +92,7 @@ const ProveedorPlanetas = ({ children }) => {
     cargarDatosIniciales();
   }, []);
 
+  // Valores exportados.
   const datosaExportar = {
     listaPelis,
     errores,
@@ -89,7 +100,7 @@ const ProveedorPlanetas = ({ children }) => {
     manejarClickPelicula,
     actores,
     actorSeleccionado,
-    cargarVehiculosYNaves, 
+    cargarVehiculosYNaves,
     manejarClickActor,
     starships,
     vehicles,
@@ -103,5 +114,4 @@ const ProveedorPlanetas = ({ children }) => {
 };
 
 export default ProveedorPlanetas;
-
 export { contextoPeliculas };
