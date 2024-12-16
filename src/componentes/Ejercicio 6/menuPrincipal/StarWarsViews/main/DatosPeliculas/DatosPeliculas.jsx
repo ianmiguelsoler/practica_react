@@ -1,34 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, {useContext} from "react";
 import "./DatosPeliculas.css";
 import DetallesActores from "./DetallesActores/DetallesActores.jsx";
 import DetalleActor from "./DetallesActores/DetalleActor/DetalleActor.jsx";
+import { contextoPeliculas } from "../../ContextoStarWars/ProveedorApiStarWars.jsx";
 import { convertirFechaAEuropea } from "../../../../../../biblioteca/biblioteca.js";
 
-const DatosPelicula = ({ pelicula }) => {
-  const [actores, setActores] = useState([]);
-  const [actorSeleccionado, setActorSeleccionado] = useState(null);
+const DatosPelicula = () => {
+  const {
+    peliculaSeleccionada,
+    actores,
+    actorSeleccionado,
+    manejarClickActor,
+  } = useContext(contextoPeliculas);
 
-  useEffect(() => {
-    // Reiniciar el actor seleccionado cuando cambie la película.
-    setActorSeleccionado(null);
-
-    const obtenerActores = async () => {
-      try {
-        const promesas = pelicula.characters.slice(0, 10).map((url) =>
-          fetch(url).then((res) => res.json())
-        );
-        const actoresResueltos = await Promise.all(promesas);
-        setActores(actoresResueltos);
-      } catch (error) {
-        console.error(`Error al cargar los actores: ${error.message}`);
-      }
-    };
-    obtenerActores();
-  }, [pelicula]); // Ejecutar cuando cambie la película.
-
-  const manejarClickActor = (actor) => {
-    setActorSeleccionado(actor);
-  };
+  if (!peliculaSeleccionada) {
+    return <p>Selecciona una película para ver los detalles.</p>;
+  }
 
   return (
     <div className="datos-pelicula">
@@ -38,21 +25,21 @@ const DatosPelicula = ({ pelicula }) => {
           alt="Nave Imperial"
           className="nave-imperial"
         />
-        <h2 className="titulo-pelicula">{pelicula.title}</h2>
+        <h2 className="titulo-pelicula">{peliculaSeleccionada.title}</h2>
       </div>
       <div className="contenido">
         <p>
-          <strong>🧑‍🎬 Director:</strong> {pelicula.director}
+          <strong>🧑‍🎬 Director:</strong> {peliculaSeleccionada.director}
         </p>
         <p>
-          <strong>🎬 Productor:</strong> {pelicula.producer}
+          <strong>🎬 Productor:</strong> {peliculaSeleccionada.producer}
         </p>
         <p>
           <strong>📅 Fecha de lanzamiento:</strong>{" "}
-          {convertirFechaAEuropea(pelicula.release_date)}
+          {convertirFechaAEuropea(peliculaSeleccionada.release_date)}
         </p>
         <p className="sinopsis">
-          <strong>📜 Sinopsis:</strong> {pelicula.opening_crawl}
+          <strong>📜 Sinopsis:</strong> {peliculaSeleccionada.opening_crawl}
         </p>
         <div>
           <h3>Protagonistas:</h3>

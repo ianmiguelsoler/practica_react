@@ -1,8 +1,12 @@
 import TituloPelicula from "./TituloPelicula/TituloPelicula.jsx";
+import { contextoPeliculas } from "../../ContextoStarWars/ProveedorApiStarWars.jsx";
+import { useContext } from "react";
 
-const TitulosPeliculas = ({ peliculas, manejarClickPelicula }) => {
-
+const TitulosPeliculas = () => {
+  const {listaPelis , manejarClickPelicula } =
+  useContext(contextoPeliculas);
   // Utilizamos ManejarClickDelegado para delegar el evento click a cada título.
+
   const manejarClickDelegado = (event) => {
     let elementoClickeado = event.target;
 
@@ -22,8 +26,8 @@ const TitulosPeliculas = ({ peliculas, manejarClickPelicula }) => {
     <div>
       <h2>Películas de Star Wars</h2>
       <ul  onClick={manejarClickDelegado}>
-        {peliculas.length && Array.isArray(peliculas) ? (
-          peliculas.map((peli, index) => (
+        {listaPelis.length && Array.isArray(listaPelis) ? (
+          listaPelis.map((peli, index) => (
             <TituloPelicula
               key={peli.episode_id}
               pelicula={peli}

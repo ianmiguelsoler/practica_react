@@ -2,7 +2,6 @@ import { useContext } from "react";
 import "./ListaStarWarsApi.css";
 import TitulosPeliculas from "./TitulosPeliculas/TitulosPeliculas.jsx";
 import DatosPelicula from "./DatosPeliculas/DatosPeliculas.jsx";
-import { obtenerDatosApiStarWars, obtenerPeliculaPorId } from "../../../../../biblioteca/biblioteca.js";
 import { contextoPeliculas } from "../ContextoStarWars/ProveedorApiStarWars.jsx";
 
 const ListaStarWarsApi = () => {

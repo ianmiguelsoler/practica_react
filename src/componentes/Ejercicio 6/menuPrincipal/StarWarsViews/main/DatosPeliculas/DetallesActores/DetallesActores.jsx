@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { contextoPeliculas } from "../../../ContextoStarWars/ProveedorApiStarWars";
 
-const DetallesActores = ({ actores, manejarClickActor }) => {
+const DetallesActores = () => {
+  const {
+    manejarClickActor,
+    actores,
+  } = useContext(contextoPeliculas);
+
   const manejarClickDelegado = (event) => {
     // Verificar si el elemento clickeado es un <li>.
     const elementoClickeado = event.target.closest("li");
@@ -11,18 +17,22 @@ const DetallesActores = ({ actores, manejarClickActor }) => {
     manejarClickActor(actores[index]);
   };
 
+  console.log(actores);
+
   return (
-    <ul className="actor-lista" onClick={manejarClickDelegado}>
-      {actores.map((actor, index) => (
-        <li
-          key={actor.url}
-          data-actor-index={index}
-          className="actor-nombre"
-        >
-          {actor.name}
-        </li>
-      ))}
-    </ul>
+    <div>
+      <ul className="actor-lista" onClick={manejarClickDelegado}>
+        {actores.map((actor, index) => (
+          <li
+            key={actor.url}
+            data-actor-index={index}
+            className="actor-nombre"
+          >
+            {actor.name}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
