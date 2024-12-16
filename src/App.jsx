@@ -1,16 +1,14 @@
 import './App.css';
 import React from "react";
-import Contenedor from './componentes/ejercicio_4/app/contenedor/Contenedor.jsx';
-import ListaStarWarsApi from './componentes/ejercicio_4/menuPrincipal/StarWarsViews/main/ListaStarWarsApi.jsx';
+import ListaStarWarsApi from './componentes/Ejercicio 6/menuPrincipal/StarWarsViews/main/ListaStarWarsApi.jsx';
+import ProveedorApiStarWars from './componentes/Ejercicio 6/menuPrincipal/StarWarsViews/ContextoStarWars/ProveedorApiStarWars.jsx';
 const App = () => {
 
   return (
     <>
-      <Contenedor>
-          <ProveedorApiStarWars>
-            <ListaStarWarsApi/>
-          </ProveedorApiStarWars>
-      </Contenedor>
+      <ProveedorApiStarWars>
+        <ListaStarWarsApi/>
+      </ProveedorApiStarWars>
     </>
   );
 };

@@ -45,7 +45,8 @@ const ProveedorPlanetas = ({ children }) => {
   const datosaExportar = {
     listaPelis,
     errores,
-    peliculaSeleccionada
+    peliculaSeleccionada,
+    manejarClickPelicula
   };
 
   return (
