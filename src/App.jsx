@@ -7,8 +7,9 @@ const App = () => {
   return (
     <>
       <Contenedor>
-          {/* <DiscoFormulario/> */}
-          <ListaStarWarsApi />
+          <ProveedorApiStarWars>
+            <ListaStarWarsApi/>
+          </ProveedorApiStarWars>
       </Contenedor>
     </>
   );
