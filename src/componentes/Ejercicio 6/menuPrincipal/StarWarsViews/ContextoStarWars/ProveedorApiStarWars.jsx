@@ -59,21 +59,15 @@ const ProveedorPlanetas = ({ children }) => {
   // Función para cargar vehículos y naves de un actor
   const cargarVehiculosYNaves = async (actor) => {
     try {
-      // Cargar starships
-      const promesasStarships = actor.starships.map((url) =>
-        fetch(url).then((res) => res.json())
-      );
+      const promesasStarships = actor.starships.map((url) => fetch(url).then((res) => res.json()));
       const naves = await Promise.all(promesasStarships);
       setStarships(naves);
-
-      // Cargar vehicles
-      const promesasVehicles = actor.vehicles.map((url) =>
-        fetch(url).then((res) => res.json())
-      );
+  
+      const promesasVehicles = actor.vehicles.map((url) => fetch(url).then((res) => res.json()));
       const vehiculos = await Promise.all(promesasVehicles);
       setVehicles(vehiculos);
     } catch (error) {
-      console.error(`Error al cargar los vehículos y naves: ${error.message}`);
+      console.error("Error al cargar vehículos y naves:", error);
     }
   };
 
@@ -95,6 +89,7 @@ const ProveedorPlanetas = ({ children }) => {
     manejarClickPelicula,
     actores,
     actorSeleccionado,
+    cargarVehiculosYNaves, 
     manejarClickActor,
     starships,
     vehicles,

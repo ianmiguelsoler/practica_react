@@ -17,8 +17,6 @@ const DetallesActores = () => {
     manejarClickActor(actores[index]);
   };
 
-  console.log(actores);
-
   return (
     <div>
       <ul className="actor-lista" onClick={manejarClickDelegado}>

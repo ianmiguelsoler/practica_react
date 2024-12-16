@@ -1,5 +1,7 @@
 import React, { useContext, useState } from "react";
 import { contextoPeliculas } from "../../../../ContextoStarWars/ProveedorApiStarWars";
+import StarshipsList from "./StarShips/StarShipsList.jsx";
+import VehiclesList from "./Vehiculos/VehiculosList.jsx";
 
 const DetalleActor = () => {
   const { actorSeleccionado, starships, vehicles, cargarVehiculosYNaves } =
@@ -26,37 +28,8 @@ const DetalleActor = () => {
       </button>
       {mostrarPilota && (
         <div>
-          <h4>Starships</h4>
-          {starships.length > 0 ? (
-            <ul>
-              {starships.map((ship) => (
-                <li key={ship.name}>
-                  <p><strong>Nombre:</strong> {ship.name}</p>
-                  <p><strong>Modelo:</strong> {ship.model}</p>
-                  <p><strong>Fabricante:</strong> {ship.manufacturer}</p>
-                  <p><strong>Clase:</strong> {ship.starship_class}</p>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>Este actor no tiene starships.</p>
-          )}
-
-          <h4>Vehicles</h4>
-          {vehicles.length > 0 ? (
-            <ul>
-              {vehicles.map((vehicle) => (
-                <li key={vehicle.name}>
-                  <p><strong>Nombre:</strong> {vehicle.name}</p>
-                  <p><strong>Modelo:</strong> {vehicle.model}</p>
-                  <p><strong>Fabricante:</strong> {vehicle.manufacturer}</p>
-                  <p><strong>Clase:</strong> {vehicle.vehicle_class}</p>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>Este actor no tiene vehicles.</p>
-          )}
+          <StarshipsList starships={starships} />
+          <VehiclesList vehicles={vehicles} />
         </div>
       )}
     </div>
