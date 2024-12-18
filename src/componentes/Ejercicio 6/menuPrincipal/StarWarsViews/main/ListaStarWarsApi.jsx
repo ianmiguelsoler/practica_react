@@ -5,9 +5,7 @@ import DatosPelicula from "./DatosPeliculas/DatosPeliculas.jsx";
 import { contextoPeliculas } from "../ContextoStarWars/ProveedorApiStarWars.jsx";
 
 const ListaStarWarsApi = () => {
-  // Inicializamos las variables de estado.
-  // link funcional https://swapi.py4e.com/api/films
-
+  // Importamos y usamos las variables hechas en el contexto.
   const { listaPelis, errores, peliculaSeleccionada, manejarClickPelicula } =
     useContext(contextoPeliculas);
   return (

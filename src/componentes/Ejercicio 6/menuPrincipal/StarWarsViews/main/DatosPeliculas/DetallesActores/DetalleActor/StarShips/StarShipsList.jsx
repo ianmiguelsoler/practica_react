@@ -1,5 +1,5 @@
 import React from "react";
-
+//Componente que muestra todas las naves.
 const StarshipsList = ({ starships }) => {
   return (
     <div>

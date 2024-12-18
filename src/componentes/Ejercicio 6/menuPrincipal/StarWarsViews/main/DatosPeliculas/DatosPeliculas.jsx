@@ -6,6 +6,7 @@ import { contextoPeliculas } from "../../ContextoStarWars/ProveedorApiStarWars.j
 import { convertirFechaAEuropea } from "../../../../../../biblioteca/biblioteca.js";
 
 const DatosPelicula = () => {
+  // importamos todo lo necesario del contexto
   const {
     peliculaSeleccionada,
     actores,
@@ -13,6 +14,7 @@ const DatosPelicula = () => {
     manejarClickActor,
   } = useContext(contextoPeliculas);
 
+  //Nos aseguramos de que la pelícuala esté seleccionada
   if (!peliculaSeleccionada) {
     return <p>Selecciona una película para ver los detalles.</p>;
   }

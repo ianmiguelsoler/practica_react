@@ -1,5 +1,5 @@
 import React from "react";
-
+//Componente que muestra todos los vehiculos.
 const VehiclesList = ({ vehicles }) => {
   return (
     <div>

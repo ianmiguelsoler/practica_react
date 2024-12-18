@@ -3,6 +3,7 @@ import { contextoPeliculas } from "../../ContextoStarWars/ProveedorApiStarWars.j
 import { useContext } from "react";
 
 const TitulosPeliculas = () => {
+  // Utilizamos el contexto para traer la lista de peliculas y la funcion manejarClickPelicula.
   const {listaPelis , manejarClickPelicula } =
   useContext(contextoPeliculas);
   // Utilizamos ManejarClickDelegado para delegar el evento click a cada título.

@@ -7,6 +7,7 @@ const DetallesActores = () => {
     actores,
   } = useContext(contextoPeliculas);
 
+  //Funcion que delega el click para pasar el actor seleccionado.
   const manejarClickDelegado = (event) => {
     // Verificar si el elemento clickeado es un <li>.
     const elementoClickeado = event.target.closest("li");

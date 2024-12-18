@@ -4,10 +4,12 @@ import StarshipsList from "./StarShips/StarShipsList.jsx";
 import VehiclesList from "./Vehiculos/VehiculosList.jsx";
 
 const DetalleActor = () => {
+//Traemos lo necesario del contexto.
   const { actorSeleccionado, starships, vehicles, cargarVehiculosYNaves } =
     useContext(contextoPeliculas);
+//Hacemos una variable goku para controlar el botón y su texto.
   const [mostrarPilota, setMostrarPilota] = useState(false);
-
+//Función, cuando cambie el valor de mostrarPilota carga los datos y cambia el valor de la variable.
   const manejarClickPilota = () => {
     setMostrarPilota(!mostrarPilota);
     if (!mostrarPilota) cargarVehiculosYNaves(actorSeleccionado);
